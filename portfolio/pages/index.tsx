@@ -6,6 +6,7 @@ import SectionUpper from '../components/HomeContent/SectionUpper';
 import Layout from '../components/Layout';
 
 const Home: NextPage = () => {
+  
   return (
     <Layout>
       <Head>
