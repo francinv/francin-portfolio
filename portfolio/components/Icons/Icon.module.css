@@ -1,0 +1,7 @@
+.hover_style {
+    transition: fill 150ms ease-in-out;
+}
+
+.hover_style:hover {
+    fill: #63288A;
+}

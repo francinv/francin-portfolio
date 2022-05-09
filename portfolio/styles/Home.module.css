@@ -1,0 +1,8 @@
+.container {
+  min-height: 100vh;
+  background-image: url('/wallpaper.svg');
+  background-color: #cccccc;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
