@@ -1,0 +1,31 @@
+.pr_32 {
+    padding-right: 32px;
+}
+
+.pl_16 {
+    padding-left: 16px;
+}
+
+.px_7 {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.p_x_16 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.p_y_8 {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.py_9 {
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+.p_32 {
+    padding: 32px;
+}

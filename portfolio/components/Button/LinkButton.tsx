@@ -2,6 +2,7 @@ import React from "react";
 import { GithubIcon } from "../Icons/GitHub";
 import { LinkedInIcon } from "../Icons/LinkedIn";
 import style from './Button.module.css';
+import colorStyles from '../../styles/colors.module.css';
 
 interface LinkButtonProps {
     linkTo: string,
@@ -22,7 +23,7 @@ const LinkButton: React.FC<LinkButtonProps> = ({linkTo, text}) => {
     return (
         <a className={`${style.button_container} hover_button`} href={linkTo} target='_blank' rel="noreferrer">
             {getIconComponent()}
-            <p className={style.white}>{text}</p>
+            <p className={colorStyles.text_white}>{text}</p>
         </a>
     )
 }

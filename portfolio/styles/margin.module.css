@@ -1,0 +1,46 @@
+.m_0 {
+    margin: 0;
+}
+
+.mt_32 {
+    margin-top: 32px;
+}
+
+.mr_12 {
+    margin-right: 12px;
+}
+
+.mr_16 {
+    margin-right: 16px;
+}
+
+.mb_0 {
+    margin-bottom: 0;
+}
+
+.mb_8 {
+    margin-bottom: 8px;
+}
+
+.ml_16 {
+    margin-left: 16px;
+}
+
+.ml_auto {
+    margin-left: auto;
+}
+
+.my_8 {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.my_auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mx_0 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
