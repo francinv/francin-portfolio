@@ -1,12 +1,15 @@
-import React from "react";
+import React, { FC } from "react";
 import { githubLink, linkedinLink } from "../../constants/links";
 import LinkButton from "../Button/LinkButton";
 import ProgramButton from "../Button/ProgramButton";
 import layoutStyles from '../../styles/layout.module.css';
 import marginStyles from '../../styles/margin.module.css';
-import Modal from "../common/Modal";
 
-const SectionUpper: React.FC = () => {
+interface SectionUpperProps {
+    handleShow: () => void;
+}    
+
+const SectionUpper: FC<SectionUpperProps> = ({handleShow}) => {
 
     return (
         <section 
@@ -20,7 +23,7 @@ const SectionUpper: React.FC = () => {
                 `}
             style={{width: '97%'}}
         >
-            <ProgramButton handleClick={(event) => console.log(event)} text="Terminal" index="Terminal" />
+            <ProgramButton handleClick={handleShow} text="Terminal" index="Terminal" />
             <div className={`${marginStyles.ml_auto} ${layoutStyles.flex_row}`}>
                 <LinkButton linkTo={githubLink} text="GitHub" /> 
                 <LinkButton linkTo={linkedinLink} text="LinkedIn" />
