@@ -2,6 +2,13 @@
     margin: 0;
 }
 
+.mt_5 {
+    margin-top: 5px;
+}
+.mt_12 {
+    margin-top: 12px;
+}
+
 .mt_32 {
     margin-top: 32px;
 }
@@ -18,8 +25,16 @@
     margin-bottom: 0;
 }
 
+.mb_5 {
+    margin-bottom: 5px;
+}
+
 .mb_8 {
     margin-bottom: 8px;
+}
+
+.ml_12 {
+    margin-left: 8px;
 }
 
 .ml_16 {
@@ -48,4 +63,9 @@
 .mx_0 {
     margin-top: 0;
     margin-bottom: 0;
+}
+
+.mx_5 {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
