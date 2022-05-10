@@ -1,7 +1,7 @@
-.hover_style {
-    transition: fill 150ms ease-in-out;
+.hover_element {
+    transition: fill 300ms ease-in-out;
 }
 
-.hover_style:hover {
+.hover_fill:hover .hover_element{
     fill: #63288A;
 }

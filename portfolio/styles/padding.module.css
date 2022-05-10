@@ -11,6 +11,11 @@
     padding-bottom: 7px;
 }
 
+.px_8 {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
 .p_x_16 {
     padding-top: 16px;
     padding-bottom: 16px;
@@ -24,6 +29,16 @@
 .py_9 {
     padding-left: 9px;
     padding-right: 9px;
+}
+
+.py_16 {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.py_36 {
+    padding-left: 36px;
+    padding-right: 36px;
 }
 
 .p_32 {

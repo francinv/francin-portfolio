@@ -4,6 +4,7 @@ import LinkButton from "../Button/LinkButton";
 import ProgramButton from "../Button/ProgramButton";
 import layoutStyles from '../../styles/layout.module.css';
 import marginStyles from '../../styles/margin.module.css';
+import Modal from "../common/Modal";
 
 const SectionUpper: React.FC = () => {
 

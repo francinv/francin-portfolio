@@ -27,7 +27,7 @@ const ProgramButton: React.FC<ProgramButtonProps> = ({text, handleClick, index})
 
 
     return (
-        <button className={`${style.button_container} hover_button`} onClick={() => handleClick(index)} key={index}>
+        <button className={style.button_container} onClick={() => handleClick(index)} key={index}>
             {getIconComponent()}
             <p className={`${colorStyles.text_white} ${commonStyles.text_16}`}>{text}</p>
         </button>
