@@ -1,0 +1,11 @@
+.toolbar_container {
+    background-color: #3A3739;
+    width: 100%;
+    height: 70px;
+}
+
+.btn_toolbar {
+    border-style: none;
+    background: transparent;
+    cursor: pointer;
+}
