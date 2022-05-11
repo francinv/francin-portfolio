@@ -1,24 +1,22 @@
 import type { NextPage } from 'next'
 import Head from 'next/head';
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Modal from '../components/common/Modal/Modal';
 import HeaderComponent from '../components/Header/HeaderComponent';
 import SectionMain from '../components/HomeContent/SectionMain';
 import SectionUpper from '../components/HomeContent/SectionUpper';
 import Layout from '../components/Layout';
 import Terminal from '../components/Terminal/Terminal';
+import { PortfolioContext } from '../features/AppContext';
 
 const Home: NextPage = () => {
-  const [show, setShow] = useState(false);
-  const [fullSize, setFullSize] = useState(false)
+  const { setModalShowFn } = useContext(PortfolioContext);
 
-  const handleShowModal = () => {
-    setShow((prevState) => !prevState);
-  }
-
-  const handleEnhance = () => {
-    setFullSize((prevState) => !prevState);
-  }
+  useEffect(() => {
+    setTimeout(() => {
+      setModalShowFn(true);
+    }, 500);
+  }, [])
   
   return (
     <Layout>
@@ -29,11 +27,11 @@ const Home: NextPage = () => {
       </Head>
       <HeaderComponent />
       <div>
-        <SectionUpper handleShow={handleShowModal}/>
+        <SectionUpper />
         <SectionMain />
       </div>
-      <Modal show={show} fullSize={fullSize}>
-        <Terminal handleEnhance={handleEnhance} handleShow={handleShowModal} />
+      <Modal>
+        <Terminal />
       </Modal>
     </Layout>
   )

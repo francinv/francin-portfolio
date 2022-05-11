@@ -2,15 +2,10 @@ import React, { FC } from "react";
 import TerminalContent from "./TerminalContent";
 import TerminalToolbar from "./TerminalToolbar";
 
-interface TerminalProps {
-    handleShow: () => void;
-    handleEnhance: () => void;
-}
-
-const Terminal: FC<TerminalProps> = ({handleEnhance, handleShow}) => {
+const Terminal: FC = () => {
     return (
         <>
-            <TerminalToolbar handleEnhance={handleEnhance} handleShow={handleShow} />
+            <TerminalToolbar />
             <TerminalContent />
         </>
     );

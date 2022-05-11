@@ -1,19 +1,16 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
 import customStyles from './Modal.module.css';
 import layoutStyles from '../../../styles/layout.module.css';
+import { PortfolioContext } from "../../../features/AppContext";
 
-interface ModalProps {
-    show: boolean;
-    fullSize: boolean;
-}
-
-const Modal: FC<ModalProps> = ({children, show, fullSize}) => {
+const Modal: FC = ({children}) => {
+    const {modalShow, fullSizeModal} = useContext(PortfolioContext);
     const [positions, setPositions] = React.useState({
         top: '50%',
         left: '50%',
     })
 
-    if (!show) {
+    if (!modalShow) {
         return null;
     }
 
@@ -24,9 +21,9 @@ const Modal: FC<ModalProps> = ({children, show, fullSize}) => {
             style={{
                 top: positions.top,
                 left: positions.left,
-                width: fullSize ? '100%' : '70%',
-                minHeight: fullSize? '100%' : '80%',
-                borderRadius: fullSize ? '0' : '8px',
+                width: fullSizeModal ? '100%' : '70%',
+                minHeight: fullSizeModal? '100%' : '80%',
+                borderRadius: fullSizeModal ? '0' : '8px',
             }}
         >
             {children}

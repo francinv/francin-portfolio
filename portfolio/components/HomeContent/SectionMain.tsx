@@ -4,7 +4,6 @@ import GithubOverviewCard from "../Cards/GithubOverviewCard";
 import LanguageCard from "../Cards/LanguageCard";
 import layoutStyles from '../../styles/layout.module.css';
 import marginStyles from '../../styles/margin.module.css';
-import Modal from "../common/Modal";
 
 
 const SectionMain: React.FC = () => {
@@ -26,8 +25,8 @@ const SectionMain: React.FC = () => {
             >
                 <GithubOverviewCard />
                 <>
-                    <ProgramButton handleClick={(event) => console.log(event)} text='My projects' index="Projects"/>
-                    <ProgramButton handleClick={(event) => console.log(event)} text='CV.pdf' index="CV"/>
+                    <ProgramButton text='My projects' index="Projects"/>
+                    <ProgramButton text='CV.pdf' index="CV"/>
                 </>
                 <LanguageCard />
             </div>

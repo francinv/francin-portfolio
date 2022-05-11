@@ -4,11 +4,7 @@ import layoutStyles from "../../styles/layout.module.css";
 import paddingStyles from "../../styles/padding.module.css";
 import ToolbarButtonSection from "../common/Toolbar/ToolbarButtonSection";
 
-interface TerminalToolbarProps {
-    handleShow: () => void;
-    handleEnhance: () => void;
-}
-const TerminalToolbar: FC<TerminalToolbarProps> = ({handleEnhance, handleShow}) => {
+const TerminalToolbar: FC = () => {
     return (
         <div 
             className=
@@ -19,7 +15,7 @@ const TerminalToolbar: FC<TerminalToolbarProps> = ({handleEnhance, handleShow}) 
                 ${paddingStyles.p_y_8}
             `}
         >
-            <ToolbarButtonSection handleEnhance={handleEnhance} handleShow={handleShow} />
+            <ToolbarButtonSection />
         </div>
     );
 }

@@ -5,11 +5,7 @@ import ProgramButton from "../Button/ProgramButton";
 import layoutStyles from '../../styles/layout.module.css';
 import marginStyles from '../../styles/margin.module.css';
 
-interface SectionUpperProps {
-    handleShow: () => void;
-}    
-
-const SectionUpper: FC<SectionUpperProps> = ({handleShow}) => {
+const SectionUpper: FC = () => {
 
     return (
         <section 
@@ -23,7 +19,7 @@ const SectionUpper: FC<SectionUpperProps> = ({handleShow}) => {
                 `}
             style={{width: '97%'}}
         >
-            <ProgramButton handleClick={handleShow} text="Terminal" index="Terminal" />
+            <ProgramButton text="Terminal" index="Terminal" />
             <div className={`${marginStyles.ml_auto} ${layoutStyles.flex_row}`}>
                 <LinkButton linkTo={githubLink} text="GitHub" /> 
                 <LinkButton linkTo={linkedinLink} text="LinkedIn" />

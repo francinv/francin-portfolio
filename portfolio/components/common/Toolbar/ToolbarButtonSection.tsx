@@ -1,15 +1,13 @@
-import React, { FC, useState } from "react";
+import React, { FC, useContext, useState } from "react";
 import ToolbarButton from "../../Button/ToolbarButton";
 import { CrossIcon, EnhanceIcon, MinusIcon } from "../../Icons/ToolbarIcons";
 import layoutStyles from "../../../styles/layout.module.css";
+import { PortfolioContext } from "../../../features/AppContext";
 
-interface ToolbarButtonSectionProps {
-    handleShow: () => void;
-    handleEnhance: () => void;
-}
-const ToolbarButtonSection: FC<ToolbarButtonSectionProps> = ({handleEnhance, handleShow}) => {
+const ToolbarButtonSection: FC = () => {
     const[iconVisible, setIconVisible] = useState(false);
-
+    const { setModalShowFn, setFullSizeModalFn, fullSizeModal } = useContext(PortfolioContext);
+    
     return (
         <div 
             className={`${layoutStyles.flex_row}`} 
@@ -17,17 +15,17 @@ const ToolbarButtonSection: FC<ToolbarButtonSectionProps> = ({handleEnhance, han
             onMouseLeave={() => setIconVisible(false)}
         >
             <ToolbarButton 
-                handleClick={handleShow}
+                handleClick={() => setModalShowFn(false)}
                 Icon={CrossIcon} 
                 iconVisible={iconVisible}
             />
             <ToolbarButton
-                handleClick={handleShow}
+                handleClick={() => setModalShowFn(false)}
                 Icon={MinusIcon}
                 iconVisible={iconVisible}
             />
             <ToolbarButton
-                handleClick={handleEnhance}
+                handleClick={() => setFullSizeModalFn(!fullSizeModal)}
                 Icon={EnhanceIcon}
                 iconVisible={iconVisible}
             />
