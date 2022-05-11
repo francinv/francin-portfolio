@@ -10,8 +10,13 @@
     font-family: inherit;
 }
 
-.white {
-    color: white;
+.btn_toolbar {
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+    padding: 0;
+    border-style: none;
+    border-color: transparent;
+    background-color: transparent;
 }
-
-  

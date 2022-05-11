@@ -1,0 +1,9 @@
+.toolbar_container {
+    background-color: #272630;
+    width: 100%;
+    height: 30px;
+}
+
+.terminal_content_container {
+    width: 95%;
+}
