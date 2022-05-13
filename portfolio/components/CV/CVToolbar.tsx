@@ -8,6 +8,7 @@ import ToolbarButtonSection from "../common/Toolbar/ToolbarButtonSection";
 import DownloadIcon from "../Icons/DownloadIcon";
 
 const CVToolbar: FC = () => {
+    const cvLink = "https://drive.google.com/file/d/1CJWntPF5KUn0AXq1DMIvTzNmCOB7A-6n/view?usp=sharing";
     return (
         <div 
             className={`
@@ -19,7 +20,14 @@ const CVToolbar: FC = () => {
         >
             <ToolbarButtonSection />
             <h4 className={`${colorStyles.text_white} ${marginStyles.ml_30}`}>CV.pdf</h4>
-            <button className={`${style.btn_toolbar} ${marginStyles.ml_auto} ${marginStyles.mr_12}`}><DownloadIcon /></button>
+            <a 
+                className={`${style.btn_toolbar} ${marginStyles.ml_auto} ${marginStyles.mr_12}`} 
+                href={cvLink} 
+                target="_blank" 
+                rel="noreferrer"
+            >
+                <DownloadIcon />
+            </a>
         </div>
     )
 }

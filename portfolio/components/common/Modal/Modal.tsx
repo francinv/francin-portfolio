@@ -22,7 +22,8 @@ const Modal: FC = ({children}) => {
                 top: positions.top,
                 left: positions.left,
                 width: fullSizeModal ? '100%' : '70%',
-                minHeight: fullSizeModal? '100%' : '80%',
+                minHeight: '70%',
+                maxHeight: fullSizeModal? '100%' : '70%',
                 borderRadius: fullSizeModal ? '0' : '8px',
             }}
         >
