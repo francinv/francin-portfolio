@@ -2,11 +2,19 @@
     margin: 0;
 }
 
+.mt_0 {
+    margin-top: 0;
+}
+
 .mt_5 {
     margin-top: 5px;
 }
 .mt_12 {
     margin-top: 12px;
+}
+
+.mt_30 {
+    margin-top: 30px;
 }
 
 .mt_32 {
@@ -33,6 +41,10 @@
     margin-bottom: 8px;
 }
 
+.mb_10 {
+    margin-bottom: 10px;
+}
+
 .ml_12 {
     margin-left: 8px;
 }
@@ -41,8 +53,17 @@
     margin-left: 16px;
 }
 
+.ml_30 {
+    margin-left: 30px;
+}
+
 .ml_auto {
     margin-left: auto;
+}
+
+.my_1 {
+    margin-left: 1px;
+    margin-right: 1px;
 }
 
 .my_5 {
@@ -73,4 +94,9 @@
 .mx_5 {
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.mx_16 {
+    margin-top: 16px;
+    margin-bottom: 16px;
 }

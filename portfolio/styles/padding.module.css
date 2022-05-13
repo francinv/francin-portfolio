@@ -21,9 +21,17 @@
     padding-bottom: 16px;
 }
 
+.px_70 {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
 .p_y_8 {
     padding-left: 8px;
     padding-right: 8px;
+}
+
+.pb_5 {
+    padding-bottom: 5px;
 }
 
 .py_9 {
@@ -41,6 +49,10 @@
     padding-right: 36px;
 }
 
+.py_40 {
+    padding-left: 40px;
+    padding-right: 40px;
+}
 .p_32 {
     padding: 32px;
 }
