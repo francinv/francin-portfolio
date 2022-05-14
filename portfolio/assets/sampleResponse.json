@@ -1,0 +1,526 @@
+{
+    "data": {
+      "viewer": {
+        "login": "francinv",
+        "repositories": {
+          "nodes": [
+            {
+              "description": "This is a repository for an admin panel. Will be built with django and react. ",
+              "name": "schmell-admin-panel",
+              "issues": {
+                "totalCount": 46
+              },
+              "languages": {
+                "nodes": [
+                  {
+                    "name": "Python",
+                    "color": "#3572A5"
+                  },
+                  {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  {
+                    "name": "Procfile",
+                    "color": "#3B2F63"
+                  }
+                ]
+              },
+              "pullRequests": {
+                "totalCount": 46
+              },
+              "url": "https://github.com/francinv/schmell-admin-panel",
+              "deployments": {
+                "nodes": [
+                  {
+                    "latestStatus": {
+                      "state": "SUCCESS"
+                    }
+                  }
+                ]
+              },
+              "openGraphImageUrl": "https://repository-images.githubusercontent.com/437527854/bbcf606a-49dc-408e-9fc0-8ca50d340e92"
+            },
+            {
+              "description": "A drinking game for everyone! The application will be built with react native and persist some data using AsyncStorage. The content will be fetched from an admin panel.",
+              "name": "schmell-app",
+              "issues": {
+                "totalCount": 16
+              },
+              "languages": {
+                "nodes": [
+                  {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  {
+                    "name": "TypeScript",
+                    "color": "#2b7489"
+                  },
+                  {
+                    "name": "Ruby",
+                    "color": "#701516"
+                  },
+                  {
+                    "name": "Starlark",
+                    "color": "#76d275"
+                  },
+                  {
+                    "name": "Java",
+                    "color": "#b07219"
+                  },
+                  {
+                    "name": "Objective-C",
+                    "color": "#438eff"
+                  }
+                ]
+              },
+              "pullRequests": {
+                "totalCount": 18
+              },
+              "url": "https://github.com/francinv/schmell-app",
+              "deployments": {
+                "nodes": []
+              },
+              "openGraphImageUrl": "https://repository-images.githubusercontent.com/456642017/c67cafcc-c09e-45ab-8be8-84cd1d7ab783"
+            },
+            {
+              "description": "Repository for my portfolio page. The application will be built with React in TypeScript. ",
+              "name": "francin-portfolio",
+              "issues": {
+                "totalCount": 6
+              },
+              "languages": {
+                "nodes": [
+                  {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  {
+                    "name": "TypeScript",
+                    "color": "#2b7489"
+                  },
+                  {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  }
+                ]
+              },
+              "pullRequests": {
+                "totalCount": 4
+              },
+              "url": "https://github.com/francinv/francin-portfolio",
+              "deployments": {
+                "nodes": []
+              },
+              "openGraphImageUrl": "https://avatars.githubusercontent.com/u/70270809?s=400&v=4"
+            },
+            {
+              "description": "This is a repository for a school project. The group created a website for an imaginary company.",
+              "name": "IT2805-Studentmegleren",
+              "issues": {
+                "totalCount": 0
+              },
+              "languages": {
+                "nodes": [
+                  {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  }
+                ]
+              },
+              "pullRequests": {
+                "totalCount": 0
+              },
+              "url": "https://github.com/francinv/IT2805-Studentmegleren",
+              "deployments": {
+                "nodes": []
+              },
+              "openGraphImageUrl": "https://avatars.githubusercontent.com/u/70270809?s=400&v=4"
+            },
+            {
+              "description": "This is a repository for a group project in the course IT1901. A JavaFX app.",
+              "name": "IT1901-Swapp",
+              "issues": {
+                "totalCount": 0
+              },
+              "languages": {
+                "nodes": [
+                  {
+                    "name": "Java",
+                    "color": "#b07219"
+                  }
+                ]
+              },
+              "pullRequests": {
+                "totalCount": 0
+              },
+              "url": "https://github.com/francinv/IT1901-Swapp",
+              "deployments": {
+                "nodes": []
+              },
+              "openGraphImageUrl": "https://avatars.githubusercontent.com/u/70270809?s=400&v=4"
+            },
+            {
+              "description": "This is a repository for a project in the course TDT4140. APP built with Django for backend, and static HTML for frontend.",
+              "name": "TDT4140-Middagsdeling",
+              "issues": {
+                "totalCount": 0
+              },
+              "languages": {
+                "nodes": [
+                  {
+                    "name": "Python",
+                    "color": "#3572A5"
+                  },
+                  {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  }
+                ]
+              },
+              "pullRequests": {
+                "totalCount": 1
+              },
+              "url": "https://github.com/francinv/TDT4140-Middagsdeling",
+              "deployments": {
+                "nodes": []
+              },
+              "openGraphImageUrl": "https://avatars.githubusercontent.com/u/70270809?s=400&v=4"
+            },
+            {
+              "description": "Simple JavaFX built as a project for TDT4100 Objektorientert Programmering.",
+              "name": "TDT4100-Trainer",
+              "issues": {
+                "totalCount": 0
+              },
+              "languages": {
+                "nodes": [
+                  {
+                    "name": "Java",
+                    "color": "#b07219"
+                  }
+                ]
+              },
+              "pullRequests": {
+                "totalCount": 0
+              },
+              "url": "https://github.com/francinv/TDT4100-Trainer",
+              "deployments": {
+                "nodes": []
+              },
+              "openGraphImageUrl": "https://avatars.githubusercontent.com/u/70270809?s=400&v=4"
+            },
+            {
+              "description": "This is a project repo for a JavaFX app with server(API) and React client.",
+              "name": "IT1901-SalaryChecker",
+              "issues": {
+                "totalCount": 0
+              },
+              "languages": {
+                "nodes": [
+                  {
+                    "name": "Java",
+                    "color": "#b07219"
+                  },
+                  {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  }
+                ]
+              },
+              "pullRequests": {
+                "totalCount": 0
+              },
+              "url": "https://github.com/francinv/IT1901-SalaryChecker",
+              "deployments": {
+                "nodes": []
+              },
+              "openGraphImageUrl": "https://avatars.githubusercontent.com/u/70270809?s=400&v=4"
+            },
+            {
+              "description": "This is a project from the course IT2810 Web Development. This application uses the GitLab API, to present issues and labels.",
+              "name": "IT2810-GitlabGroupPage",
+              "issues": {
+                "totalCount": 0
+              },
+              "languages": {
+                "nodes": [
+                  {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  {
+                    "name": "TypeScript",
+                    "color": "#2b7489"
+                  }
+                ]
+              },
+              "pullRequests": {
+                "totalCount": 0
+              },
+              "url": "https://github.com/francinv/IT2810-GitlabGroupPage",
+              "deployments": {
+                "nodes": []
+              },
+              "openGraphImageUrl": "https://avatars.githubusercontent.com/u/70270809?s=400&v=4"
+            },
+            {
+              "description": "This is a project created in the course IT2810 Web Development. This application is a React at the frontend. The backend consists of a MongoDB database and GraphQL endpoint.",
+              "name": "IT2810-What2Watch",
+              "issues": {
+                "totalCount": 0
+              },
+              "languages": {
+                "nodes": [
+                  {
+                    "name": "Shell",
+                    "color": "#89e051"
+                  },
+                  {
+                    "name": "TypeScript",
+                    "color": "#2b7489"
+                  },
+                  {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  }
+                ]
+              },
+              "pullRequests": {
+                "totalCount": 0
+              },
+              "url": "https://github.com/francinv/IT2810-What2Watch",
+              "deployments": {
+                "nodes": []
+              },
+              "openGraphImageUrl": "https://avatars.githubusercontent.com/u/70270809?s=400&v=4"
+            },
+            {
+              "description": "This project is based on the react application called What2Watch. The backend is uploaded to NTNU servers, and the frontend has been transferred to become an app. We used React Native to solve this problem.",
+              "name": "IT2810-iWhat2Watch",
+              "issues": {
+                "totalCount": 0
+              },
+              "languages": {
+                "nodes": [
+                  {
+                    "name": "Shell",
+                    "color": "#89e051"
+                  },
+                  {
+                    "name": "TypeScript",
+                    "color": "#2b7489"
+                  },
+                  {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  }
+                ]
+              },
+              "pullRequests": {
+                "totalCount": 0
+              },
+              "url": "https://github.com/francinv/IT2810-iWhat2Watch",
+              "deployments": {
+                "nodes": []
+              },
+              "openGraphImageUrl": "https://avatars.githubusercontent.com/u/70270809?s=400&v=4"
+            },
+            {
+              "description": "This is a repository for practical exercises in TDT4186.",
+              "name": "TDT4186",
+              "issues": {
+                "totalCount": 13
+              },
+              "languages": {
+                "nodes": [
+                  {
+                    "name": "C",
+                    "color": "#555555"
+                  },
+                  {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  }
+                ]
+              },
+              "pullRequests": {
+                "totalCount": 12
+              },
+              "url": "https://github.com/francinv/TDT4186",
+              "deployments": {
+                "nodes": []
+              },
+              "openGraphImageUrl": "https://avatars.githubusercontent.com/u/70270809?s=400&v=4"
+            },
+            {
+              "description": "This is a repository for a static website created for the company Scalibra AS.  ",
+              "name": "scalibra-webpage",
+              "issues": {
+                "totalCount": 0
+              },
+              "languages": {
+                "nodes": [
+                  {
+                    "name": "HTML",
+                    "color": "#e34c26"
+                  },
+                  {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  }
+                ]
+              },
+              "pullRequests": {
+                "totalCount": 0
+              },
+              "url": "https://github.com/francinv/scalibra-webpage",
+              "deployments": {
+                "nodes": []
+              },
+              "openGraphImageUrl": "https://avatars.githubusercontent.com/u/70270809?s=400&v=4"
+            },
+            {
+              "description": "Multi-threaded web server implemented in C with sockets and pthreads",
+              "name": "pthreads-web-server",
+              "issues": {
+                "totalCount": 0
+              },
+              "languages": {
+                "nodes": []
+              },
+              "pullRequests": {
+                "totalCount": 0
+              },
+              "url": "https://github.com/francinv/pthreads-web-server",
+              "deployments": {
+                "nodes": []
+              },
+              "openGraphImageUrl": "https://avatars.githubusercontent.com/u/70270809?s=400&v=4"
+            },
+            {
+              "description": null,
+              "name": "it2901-nRF91-DepositBox",
+              "issues": {
+                "totalCount": 0
+              },
+              "languages": {
+                "nodes": [
+                  {
+                    "name": "C#",
+                    "color": "#178600"
+                  },
+                  {
+                    "name": "TypeScript",
+                    "color": "#2b7489"
+                  },
+                  {
+                    "name": "JavaScript",
+                    "color": "#f1e05a"
+                  },
+                  {
+                    "name": "CSS",
+                    "color": "#563d7c"
+                  },
+                  {
+                    "name": "C",
+                    "color": "#555555"
+                  }
+                ]
+              },
+              "pullRequests": {
+                "totalCount": 14
+              },
+              "url": "https://github.com/francinv/it2901-nRF91-DepositBox",
+              "deployments": {
+                "nodes": [
+                  {
+                    "latestStatus": {
+                      "state": "SUCCESS"
+                    }
+                  }
+                ]
+              },
+              "openGraphImageUrl": "https://avatars.githubusercontent.com/u/70270809?s=400&v=4"
+            },
+            {
+              "description": "Simple console application for monitoring time used.",
+              "name": "time-keeper",
+              "issues": {
+                "totalCount": 0
+              },
+              "languages": {
+                "nodes": [
+                  {
+                    "name": "Python",
+                    "color": "#3572A5"
+                  }
+                ]
+              },
+              "pullRequests": {
+                "totalCount": 0
+              },
+              "url": "https://github.com/francinv/time-keeper",
+              "deployments": {
+                "nodes": []
+              },
+              "openGraphImageUrl": "https://avatars.githubusercontent.com/u/70270809?s=400&v=4"
+            }
+          ]
+        }
+      }
+    }
+  }
