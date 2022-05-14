@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { useContext, useEffect, useState } from 'react';
 import Modal from '../components/common/Modal/Modal';
 import CV from '../components/CV/CV';
+import Finder from '../components/Finder/Finder';
 import HeaderComponent from '../components/Header/HeaderComponent';
 import SectionMain from '../components/HomeContent/SectionMain';
 import SectionUpper from '../components/HomeContent/SectionUpper';
@@ -25,6 +26,8 @@ const Home: NextPage = () => {
         return <Terminal />;
       case 'CV':
         return <CV />;
+      case 'Projects':
+        return <Finder />;
       default:
         return <Terminal />;
     }

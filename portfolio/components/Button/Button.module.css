@@ -20,3 +20,16 @@
     border-color: transparent;
     background-color: transparent;
 }
+
+.btn_finder {
+    cursor: pointer;
+    border-style: none;
+    border-color: transparent;
+    background-color: transparent;
+    padding: 0;
+}
+
+.btn_selected {
+    border-radius: 8px;
+    background-color: rgba(87, 88, 84, 0.5);
+}
