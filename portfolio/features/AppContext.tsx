@@ -7,7 +7,7 @@ const contextDefaultValues: ContextType = {
     terminalText: "(base) francinvincent@Francins-MBP ~ % ",
     fullSizeModal: false,
     viewType: "galleryView",
-    searchBarPlaceholder: "Search",
+    searchBarPlaceholder: "Search for project or language",
     searchValue: "",
     setModalShowFn: () => {},
     setModalTypeFn: () => {},

@@ -1,27 +1,36 @@
-import React, { FC, useContext, useEffect } from "react";
+import React, { FC, useContext, useEffect, useState } from "react";
 import { PortfolioContext } from "../../features/AppContext";
 import SymbolView from "./SymbolView";
 import sampleResponse from "../../assets/sampleResponse.json";
 import { ResponseType } from "../../typings/commonTypes";
-import paddingStyles from "../../styles/padding.module.css";
 import style from "./Finder.module.css";
 import GalleryView from "./GalleryView";
 
 const FinderContent: FC = () => {
-    const { searchValue, viewType } = useContext(PortfolioContext);
     const res = sampleResponse as ResponseType;
+    const [repositories, setRepositories] = useState(res.data.viewer.repositories.nodes);
+    const { searchValue, viewType } = useContext(PortfolioContext);
 
     useEffect(() => {
-        console.log(searchValue);
-        console.log(viewType);
+        const unFilteredRepositories = res.data.viewer.repositories.nodes;
+        if (searchValue) {
+            const filteredRepositories = unFilteredRepositories.filter(function(repo) {
+                return repo.name.toLowerCase().includes(searchValue.toLowerCase()) || repo.languages.nodes.some(function(language) {
+                    return language.name.toLowerCase().includes(searchValue.toLowerCase());
+                });
+            });
+            setRepositories(filteredRepositories);
+        } else {
+            setRepositories(res.data.viewer.repositories.nodes);
+        }
     }, [searchValue, viewType])
     
     return (
         <div className={`${style.gallery_container}`}>
             {
                 viewType === "galleryView"
-                ? <GalleryView repositories={res.data.viewer.repositories.nodes} />
-                : <SymbolView repositories={res.data.viewer.repositories.nodes}/>
+                ? <GalleryView repositories={repositories} />
+                : <SymbolView repositories={repositories}/>
             }
         </div>
     );

@@ -14,6 +14,7 @@ const FinderToolbar: FC = () => {
     const { searchBarPlaceholder, setSearchValueFn, searchValue } = useContext(PortfolioContext);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        event.preventDefault();
         setSearchValueFn(event.target.value);
     }
 
