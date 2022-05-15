@@ -2,17 +2,13 @@ html,
 body {
   padding: 0;
   margin: 0;
+  overflow: hidden;
   font-family: Lucida Grande, Lucida Sans Unicode, Lucida Sans, Geneva, Verdana, sans-serif;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-a:hover {
-  color: #039;
-  text-decoration: underline;
 }
 
 * {

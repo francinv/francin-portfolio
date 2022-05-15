@@ -52,6 +52,10 @@
     margin-bottom: 10px;
 }
 
+.ml_6 {
+    margin-left: 6px;
+}
+
 .ml_12 {
     margin-left: 8px;
 }
@@ -71,6 +75,11 @@
 .my_1 {
     margin-left: 1px;
     margin-right: 1px;
+}
+
+.my_3 {
+    margin-left: 3px;
+    margin-right: 3px;
 }
 
 .my_5 {
@@ -106,4 +115,9 @@
 .mx_16 {
     margin-top: 16px;
     margin-bottom: 16px;
+}
+
+.mx_32 {
+    margin-top: 32px;
+    margin-bottom: 32px;
 }

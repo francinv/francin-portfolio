@@ -4,6 +4,8 @@ import SymbolView from "./SymbolView";
 import sampleResponse from "../../assets/sampleResponse.json";
 import { ResponseType } from "../../typings/commonTypes";
 import paddingStyles from "../../styles/padding.module.css";
+import style from "./Finder.module.css";
+import GalleryView from "./GalleryView";
 
 const FinderContent: FC = () => {
     const { searchValue, viewType } = useContext(PortfolioContext);
@@ -15,10 +17,10 @@ const FinderContent: FC = () => {
     }, [searchValue, viewType])
     
     return (
-        <div className={paddingStyles.px_35}>
+        <div className={`${style.gallery_container}`}>
             {
                 viewType === "galleryView"
-                ? null
+                ? <GalleryView repositories={res.data.viewer.repositories.nodes} />
                 : <SymbolView repositories={res.data.viewer.repositories.nodes}/>
             }
         </div>

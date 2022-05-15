@@ -4,7 +4,7 @@ import FinderToolbar from "./FinderToolbar";
 
 const Finder: FC = () => {
     return (
-        <div>
+        <div style={{height: '100%'}}>
             <FinderToolbar />
             <FinderContent />
         </div>

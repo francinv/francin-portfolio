@@ -33,3 +33,11 @@
     border-radius: 8px;
     background-color: rgba(87, 88, 84, 0.5);
 }
+
+.btn_remove_style {
+    cursor: pointer;
+    border-style: none;
+    border-color: transparent;
+    background-color: transparent;
+    padding: 0;
+}

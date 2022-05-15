@@ -4,6 +4,7 @@ import layoutStyles from "../../styles/layout.module.css";
 import style from "./Finder.module.css";
 import colorStyles from "../../styles/colors.module.css";
 import marginStyles from "../../styles/margin.module.css";
+import paddingStyles from "../../styles/padding.module.css";
 import { FolderIcon } from "../Icons/Folder";
 
 interface SymbolViewProps {
@@ -12,7 +13,7 @@ interface SymbolViewProps {
 
 const SymbolView: FC<SymbolViewProps> = ({ repositories }) => {
     return (
-        <div className={`${style.symbol_container} ${marginStyles.my_auto}`}>
+        <div className={`${style.symbol_container} ${marginStyles.my_auto} ${paddingStyles.px_35} `}>
             {
                 repositories.map((repository, index) => (
                     <a 
