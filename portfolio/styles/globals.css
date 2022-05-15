@@ -2,6 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
+  overflow: hidden;
   font-family: Lucida Grande, Lucida Sans Unicode, Lucida Sans, Geneva, Verdana, sans-serif;
 }
 
@@ -10,15 +11,28 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  color: #039;
-  text-decoration: underline;
-}
-
 * {
   box-sizing: border-box;
 }
 
 .text_white {
   color: white;
+}
+
+input[type=text] {
+  background-color: transparent;
+  border-width: 0;
+  border-style: none;
+  border-color: transparent;
+  color: #8F8D8F;
+  height: 100%;
+  width: 90%;
+  font-size: 16px;
+  font-family: Lucida Grande;
+  margin-left: 2px;
+  font-weight: 100;
+}
+
+input[type="text"]:focus {
+  outline: none;
 }

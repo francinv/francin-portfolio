@@ -1,5 +1,13 @@
+.pt_35 {
+    padding-top: 35px;
+}
+
 .pr_32 {
     padding-right: 32px;
+}
+
+.pl_3 {
+    padding-left: 3px;
 }
 
 .pl_16 {
@@ -14,6 +22,11 @@
 .px_8 {
     padding-top: 8px;
     padding-bottom: 8px;
+}
+
+.px_35 {
+    padding-top: 35px;
+    padding-bottom: 35px;
 }
 
 .p_x_16 {
@@ -52,6 +65,10 @@
 .py_40 {
     padding-left: 40px;
     padding-right: 40px;
+}
+
+.p_5 {
+    padding: 5px;
 }
 .p_32 {
     padding: 32px;

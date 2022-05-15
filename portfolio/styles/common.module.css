@@ -6,6 +6,10 @@
   opacity: 0.8;
 }
 
+.rounded_8 {
+  border-radius: 8px;
+}
+
 .rounded_10 {
   border-radius: 10px;
 }
