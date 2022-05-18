@@ -34,6 +34,7 @@ const FinderToolbar: FC = () => {
                 <FinderButton index="symbolView" />
             </div>
             <form 
+                id="search_form"
                 className={`
                     ${layoutStyles.flex_row} 
                     ${style.form_control} 
@@ -43,7 +44,7 @@ const FinderToolbar: FC = () => {
                 `}
             >
                 <SearchIcon />
-                <input type="text" placeholder={searchBarPlaceholder} value={searchValue} onChange={handleChange}/>
+                <input id="search_field" type="text" placeholder={searchBarPlaceholder} value={searchValue} onChange={handleChange} autoFocus/>
             </form>
         </div>
     );
