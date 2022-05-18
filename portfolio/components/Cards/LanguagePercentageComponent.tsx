@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import style from "./Card.module.css";
-import languageColors from '../../assets/languageColors.json';
 import layoutStyles from '../../styles/layout.module.css';
 import marginStyles from '../../styles/margin.module.css';
 import commonStyles from '../../styles/common.module.css';
@@ -9,10 +8,10 @@ import colorStyles from '../../styles/colors.module.css';
 interface LanguagePercentageComponentProps {
     language: string;
     percentage: string;
+    color: string;
 }
 
-const LanguagePercentageComponent: FC<LanguagePercentageComponentProps> = ({ language, percentage }) => {
-    const color = languageColors[language as keyof typeof languageColors];
+const LanguagePercentageComponent: FC<LanguagePercentageComponentProps> = ({ language, percentage, color }) => {
 
     return (
         <div className={`${layoutStyles.flex_col} ${style.hover_translateX}`}>
