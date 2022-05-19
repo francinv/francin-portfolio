@@ -1,25 +1,39 @@
-import React, { FC, useContext, useEffect, useState } from "react";
+import React, { FC, useContext } from "react";
 import style from "./Terminal.module.css";
 import marginStyles from "../../styles/margin.module.css";
 import colorStyles from "../../styles/colors.module.css";
 import commonStyles from "../../styles/common.module.css";
 import layoutStyles from "../../styles/layout.module.css";
-import { typeWriter } from "../../animations/typeWriter";
 import { PortfolioContext } from "../../features/AppContext";
 
 const TerminalContent: FC = () => {
-    const [aboutVisible, setAboutVisible] = useState(false);
-    const { terminalText, setTerminalTextFn } = useContext(PortfolioContext);
-    const command = "cat aboutFrancin.json";
+    const { fullSizeModal } = useContext(PortfolioContext);
+    const command = "(base) francinvincent@Francins-MBP ~ % cat aboutFrancin.json";
 
-    useEffect(() => {
-      typeWriter(command, setTerminalTextFn, terminalText, setAboutVisible);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-    
-    const About = () => {
-        return (
-            <p className={`${colorStyles.text_white} ${marginStyles.mt_5} ${commonStyles.text_16} ${commonStyles.text_monaco}`}>
+    return (
+        <div className={`${style.terminal_content_container} ${marginStyles.my_auto} ${marginStyles.mt_12}`}>
+            <p 
+                className={`
+                    ${colorStyles.text_white} 
+                    ${marginStyles.mb_5} 
+                    ${commonStyles.text_16} 
+                    ${commonStyles.text_monaco} 
+                    ${fullSizeModal ? "full_screen_animation" : "minor_screen_animation" }
+                `}
+                onAnimationEnd={() => {
+                    const element = document.querySelector(".display_none");
+                    element?.classList.remove("display_none");
+                    element?.classList.add("display_block");
+                }}
+                    
+            >{command}</p>
+            <p 
+                className={`
+                    ${colorStyles.text_white} 
+                    ${marginStyles.mt_5} 
+                    ${commonStyles.text_16} 
+                    ${commonStyles.text_monaco}
+                    display_none`}>
                 {"{"}
                 <br />
                     <span 
@@ -38,17 +52,6 @@ const TerminalContent: FC = () => {
                     </span>
                 {"}"}
             </p>
-        );
-    }
-
-    return (
-        <div className={`${style.terminal_content_container} ${marginStyles.my_auto} ${marginStyles.mt_12}`}>
-            <p className={`${colorStyles.text_white} ${marginStyles.mb_5} ${commonStyles.text_16} ${commonStyles.text_monaco}`}>{terminalText}</p>
-            {
-                aboutVisible 
-                ? <About />
-                : null
-            }
         </div>
     );
 }
