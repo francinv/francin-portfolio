@@ -36,3 +36,35 @@ input[type=text] {
 input[type="text"]:focus {
   outline: none;
 }
+
+.minor_screen_animation {
+  overflow: hidden;
+  margin-right: auto;
+  white-space: nowrap;
+  animation: minor_typewriter 3.5s steps(40, end);
+}
+
+.full_screen_animation {
+  overflow: hidden;
+  margin-right: auto;
+  white-space: nowrap;
+  animation: full_typewriter 3.5s steps(40, end);
+}
+
+@keyframes minor_typewriter {
+  from {
+      width: 39%;
+  }
+  to {
+      width: 61%;
+  }
+}
+
+@keyframes full_typewriter {
+  from {
+    width: 27%;
+}
+to {
+    width: 43%;
+}
+}

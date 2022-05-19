@@ -1,4 +1,4 @@
-import React, { FC, useContext, useEffect, useState } from "react";
+import React, { FC, useContext } from "react";
 import style from "./Finder.module.css";
 import layoutStyles from "../../styles/layout.module.css";
 import paddingStyles from "../../styles/padding.module.css";
@@ -11,7 +11,7 @@ import SearchIcon from "../Icons/SearchIcon";
 import { PortfolioContext } from "../../features/AppContext";
 
 const FinderToolbar: FC = () => {
-    const { searchBarPlaceholder, setSearchValueFn, searchValue } = useContext(PortfolioContext);
+    const { setSearchValueFn, searchValue } = useContext(PortfolioContext);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         event.preventDefault();
@@ -44,7 +44,7 @@ const FinderToolbar: FC = () => {
                 `}
             >
                 <SearchIcon />
-                <input id="search_field" type="text" placeholder={searchBarPlaceholder} value={searchValue} onChange={handleChange} autoFocus/>
+                <input id="search_field" type="text" placeholder={"Search for project or language"} value={searchValue} onChange={handleChange} autoFocus/>
             </form>
         </div>
     );

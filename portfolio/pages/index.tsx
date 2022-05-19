@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import Modal from '../components/common/Modal/Modal';
 import CV from '../components/CV/CV';
 import Finder from '../components/Finder/Finder';

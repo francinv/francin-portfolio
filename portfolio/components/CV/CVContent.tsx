@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import style from "./CV.module.css";
 import layoutStyle from "../../styles/layout.module.css";
 import marginStyles from "../../styles/margin.module.css";
@@ -7,6 +7,8 @@ import Image from "next/image";
 import contactJson from "../../assets/cvContent.json";
 import commonStyles from "../../styles/common.module.css";
 import Competence from "./Competence";
+import { FETCH_PROFILE_PIC } from "../../services/dataQueries";
+import { useQuery } from "@apollo/client";
 
 const CVContent: FC = () => {
     return (
@@ -34,6 +36,13 @@ const ContentHeader = ({title}: {title: string}) => {
 
 const LeftContent: FC = () => {
     const competencies = contactJson.contact_info.competencies;
+    
+    const Avatar = () => {
+        const { loading, error, data } = useQuery(FETCH_PROFILE_PIC);
+        if (loading) return <p>Loading...</p>;
+        if (error) return <p>Error! error.message</p>;
+        return <Image alt="Profile picture" src={data.viewer.avatarUrl} width={170} height={200} />
+    }
 
     return (
         <div
@@ -46,7 +55,7 @@ const LeftContent: FC = () => {
             <div className={`${style.inner_container} ${marginStyles.my_auto}`}>
                 <h2 style={{textAlign: 'center'}}>Francin Vincent</h2>
                 <div className={`${marginStyles.my_auto} ${style.img_container}`}>
-                    <Image alt="Profile picture" src="/dev_profile_pic.jpg" width={170} height={200} />
+                    <Avatar />
                 </div>
                 <div className={`${marginStyles.mt_30}`}>
                     <h4 style={{borderBottom: '1px solid #141400'}} className={paddingStyles.pb_5}>Contact</h4>
