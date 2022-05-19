@@ -1,4 +1,4 @@
-import { ApolloQueryResult, useQuery } from "@apollo/client";
+import { ApolloQueryResult } from "@apollo/client";
 import React, { FC, useContext, useEffect } from "react";
 import { PortfolioContext } from "../../features/AppContext";
 import { client } from "../../services/apolloConfig";
@@ -8,7 +8,7 @@ import commonStyles from '../../styles/common.module.css';
 import layoutStyles from '../../styles/layout.module.css';
 import marginStyles from '../../styles/margin.module.css';
 import paddingStyles from '../../styles/padding.module.css';
-import { StatisticsRepoResponse } from "../../typings/responseTypes";
+import { statResponse } from "../../typings/responseTypes";
 import Loading from "../common/Loading/Loading";
 import { CommitIcon, ContributionIcon, IssueIcon, PRIcon, StarIcon } from "../Icons/GithubOverviewIcons";
 import style from "./Card.module.css";
@@ -17,31 +17,32 @@ import OverviewComponent from "./OverviewComponent";
 const GithubOverviewCard: FC = () => {
     const { githubStatistic, setGithubStatisticFn } = useContext(PortfolioContext);
 
-    const fetchStatistics = async () => {
-        const response: ApolloQueryResult<StatisticsRepoResponse> = await client.query({query: FETCH_GITHUB_STATISTICS});
-        if (response) {
-            let stars = 0;
-            response.data.viewer.repositories.nodes.forEach(repo => {
-                stars += repo.stargazers.totalCount;
-            });
-            setGithubStatisticFn({
-                ...githubStatistic,
-                status: 'success',
-                statistics: {
-                    stars: stars,
-                    commits: response.data.viewer.contributionsCollection.totalCommitContributions,
-                    prs: response.data.viewer.pullRequests.totalCount,
-                    issues: response.data.viewer.issues.totalCount,
-                    contributions: response.data.viewer.repositoriesContributedTo.totalCount,
-                }
-            });
-        }
-    }
+    
     useEffect(() => {
+        const fetchStatistics = async () => {
+            const response: ApolloQueryResult<statResponse> = await client.query({query: FETCH_GITHUB_STATISTICS});
+            if (response) {
+                let stars = 0;
+                response.data.viewer.repositories.nodes.forEach(repo => {
+                    stars += repo.stargazers.totalCount;
+                });
+                setGithubStatisticFn({
+                    ...githubStatistic,
+                    status: 'success',
+                    statistics: {
+                        stars: stars,
+                        commits: response.data.viewer.contributionsCollection.totalCommitContributions,
+                        prs: response.data.viewer.pullRequests.totalCount,
+                        issues: response.data.viewer.issues.totalCount,
+                        contributions: response.data.viewer.repositoriesContributedTo.totalCount,
+                    }
+                });
+            }
+        }
         if (githubStatistic.status === 'idle') {
             fetchStatistics();
         } 
-    }, [githubStatistic]);
+    }, [githubStatistic, setGithubStatisticFn]);
             
     return (
         <div className={`

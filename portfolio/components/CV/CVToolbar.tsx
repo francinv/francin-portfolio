@@ -9,7 +9,6 @@ import ToolbarButtonSection from "../common/Toolbar/ToolbarButtonSection";
 import DownloadIcon from "../Icons/DownloadIcon";
 
 const CVToolbar: FC = () => {
-    const cvLink = "https://drive.google.com/file/d/1CJWntPF5KUn0AXq1DMIvTzNmCOB7A-6n/view?usp=sharing";
     return (
         <div 
             className={`
@@ -24,7 +23,7 @@ const CVToolbar: FC = () => {
             <h4 className={`${marginStyles.ml_30}`}>CV.pdf</h4>
             <a 
                 className={`${buttonStyle.btn_custom} ${marginStyles.ml_auto} ${marginStyles.mr_12}`} 
-                href={cvLink} 
+                href={process.env.GOOGLE_DRIVE_URL} 
                 target="_blank" 
                 rel="noreferrer"
             >

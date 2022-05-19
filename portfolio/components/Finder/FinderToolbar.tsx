@@ -5,7 +5,6 @@ import paddingStyles from "../../styles/padding.module.css";
 import ToolbarButtonSection from "../common/Toolbar/ToolbarButtonSection";
 import colorStyles from "../../styles/colors.module.css";
 import marginStyles from "../../styles/margin.module.css";
-import commonStyles from "../../styles/common.module.css";
 import FinderButton from "../Button/FinderButton";
 import SearchIcon from "../Icons/SearchIcon";
 import { PortfolioContext } from "../../features/AppContext";

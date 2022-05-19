@@ -1,7 +1,6 @@
 import React, { FC, useContext } from "react";
 import layoutStyles from "../../styles/layout.module.css";
 import style from "./Finder.module.css";
-import colorStyles from "../../styles/colors.module.css";
 import marginStyles from "../../styles/margin.module.css";
 import paddingStyles from "../../styles/padding.module.css";
 import { FolderIcon } from "../Icons/Folder";

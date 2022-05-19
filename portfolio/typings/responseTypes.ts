@@ -1,25 +1,8 @@
-type RepoNodeStargazers = {
-    stargazers: {
-        totalCount: number
-    }
-}
+import { languageNode } from "./languageTypes"
+import { repositoriesType } from "./repoTypes"
+import { repoNodeStars } from "./statisticsTypes"
 
-export type LanguageEdge = {
-    size: number,
-    node: {
-        color: string,
-        name: string
-    }
-}
-
-export type LanguageNode = {
-    languages: {
-        totalSize: number,
-        edges: LanguageEdge[]
-    }
-}
-
-export type StatisticsRepoResponse = {
+export type statResponse = {
     viewer: {
         pullRequests: {
             totalCount: number
@@ -36,15 +19,24 @@ export type StatisticsRepoResponse = {
         },
         repositories: {
             totalCount: number
-            nodes: RepoNodeStargazers[]
+            nodes: repoNodeStars[]
         }
     }
 }
 
-export type LanguageResponse = {
+export type langResponse = {
     viewer: {
         repositories: {
-            nodes: LanguageNode[]
+            nodes: languageNode[]
         }
     }
 }
+
+export type repoResponse = {
+    viewer: {
+        repositories: {
+            nodes: repositoriesType[];
+        }
+    }
+}
+

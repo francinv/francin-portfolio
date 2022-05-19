@@ -1,20 +1,19 @@
 import React, { Dispatch, FC, SetStateAction, useContext, useEffect, useState } from "react";
-import { RepositoryType } from "../../typings/commonTypes";
 import layoutStyles from "../../styles/layout.module.css";
 import style from "./Finder.module.css";
 import paddingStyles from "../../styles/padding.module.css";
 import buttonStyle from "../Button/Button.module.css";
 import marginStyles from "../../styles/margin.module.css";
-import colorStyle from "../../styles/colors.module.css";
 import commonStyle from "../../styles/common.module.css";
 import Image from "next/image";
 import { FolderIcon } from "../Icons/Folder";
 import { PortfolioContext } from "../../features/AppContext";
 import Loading from "../common/Loading/Loading";
+import { repositoriesType } from "../../typings/repoTypes";
 
 interface ButtonProps {
-    repo: RepositoryType;
-    setSelectedRepo: Dispatch<SetStateAction<RepositoryType | undefined>>;
+    repo: repositoriesType;
+    setSelectedRepo: Dispatch<SetStateAction<repositoriesType | undefined>>;
 }
 
 const GalleryButton: FC<ButtonProps> = ({repo, setSelectedRepo}) => {
@@ -32,7 +31,7 @@ const GalleryButton: FC<ButtonProps> = ({repo, setSelectedRepo}) => {
 
 const GalleryView: FC = () => {
     const { filteredRepositories } = useContext(PortfolioContext);
-    const [selectedRepo, setSelectedRepo] = useState<RepositoryType>();
+    const [selectedRepo, setSelectedRepo] = useState<repositoriesType>();
 
     useEffect(() => {
         if (filteredRepositories.length > 0 && !selectedRepo) {
@@ -41,7 +40,7 @@ const GalleryView: FC = () => {
         
     }, [filteredRepositories, selectedRepo]);
 
-    const getIsSelectedStyling = (repo: RepositoryType) => {
+    const getIsSelectedStyling = (repo: repositoriesType) => {
         let styles = `${paddingStyles.p_5} ${style.btn_container} ${layoutStyles.flex_row} ${layoutStyles.center_all}`
         return repo === selectedRepo ? styles + ` ${style.selected}` : styles;
     }

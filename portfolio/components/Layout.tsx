@@ -1,5 +1,4 @@
-import React, { Children } from "react";
-import Image from "next/image";
+import React from "react";
 import styles from '../styles/Home.module.css';
 
 const Layout: React.FC = ({children}) => {

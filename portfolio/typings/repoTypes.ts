@@ -1,5 +1,4 @@
-
-export type RepositoryType = {
+export type repositoriesType = {
     description: string;
     name: string;
     issues: {
@@ -26,18 +25,4 @@ export type RepositoryType = {
         ]
     };
     openGraphImageUrl: string;
-}
-
-export type RepositoriesResponseType = {
-    viewer: {
-        repositories: {
-            nodes: RepositoryType[];
-        }
-    }
-}
-
-export type LanguageType = {
-  name: string;
-  color: string;
-  size: number;
 }

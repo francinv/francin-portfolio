@@ -1,48 +1,42 @@
-import { LanguageType, RepositoryType } from "./commonTypes";
+import { langType } from "./languageTypes";
+import { repositoriesType } from "./repoTypes";
+import { statistics } from "./statisticsTypes";
 
-export type GithubStatistics = {
+export type githubStatisticsContext = {
     status: string;
     error: string | null;
-    statistics: Statistics | undefined;
+    statistics: statistics | undefined;
 }
 
-export type Statistics = {
-    stars: number;
-    commits: number;
-    prs: number;
-    issues: number;
-    contributions: number;
-}
-
-export type MostUsedLanguages = {
+export type topLangContext = {
     status: string;
     error: string | null;
-    languagesArray: Array<LanguageType>;
+    languagesArray: Array<langType>;
 }
 
-export type MyRepositories = {
+export type myRepositoryContext = {
     status: string;
     error: string | null;
-    repositoriesArray: Array<RepositoryType>;
+    repositoriesArray: Array<repositoriesType>;
 }
 
-export type ContextType = {
+export type contextType = {
     modalShow: boolean;
     modalType: string;
     fullSizeModal: boolean;
     viewType: string;
     searchValue: string;
-    githubStatistic: GithubStatistics;
-    mostUsedLanguages: MostUsedLanguages;
-    myRepositories: MyRepositories;
-    filteredRepositories: Array<RepositoryType>;
+    githubStatistic: githubStatisticsContext;
+    mostUsedLanguages: topLangContext;
+    myRepositories: myRepositoryContext;
+    filteredRepositories: Array<repositoriesType>;
     setModalShowFn: (show: boolean) => void;
     setModalTypeFn: (type: string) => void;
     setFullSizeModalFn: (fullSize: boolean) => void;
     setViewTypeFn: (viewType: string) => void;
     setSearchValueFn: (value: string) => void;
-    setGithubStatisticFn: (statistic: GithubStatistics) => void;
-    setMostUsedLanguagesFn: (languages: MostUsedLanguages) => void;
-    setMyRepositoriesFn: (repositories: MyRepositories) => void;
-    setFilterRepositoriesFn: (repositories: Array<RepositoryType>) => void;
+    setGithubStatisticFn: (statistic: githubStatisticsContext) => void;
+    setMostUsedLanguagesFn: (languages: topLangContext) => void;
+    setMyRepositoriesFn: (repositories: myRepositoryContext) => void;
+    setFilterRepositoriesFn: (repositories: Array<repositoriesType>) => void;
 }

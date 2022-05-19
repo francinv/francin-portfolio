@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import style from "./Button.module.css";
 import layoutStyles from "../../styles/layout.module.css";
-import marginStyles from "../../styles/margin.module.css";
 import { ToolbarIconProps } from "../Icons/ToolbarIcons";
 
 interface ToolbarButtonProps {

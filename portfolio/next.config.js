@@ -7,7 +7,8 @@ const nextConfig = {
   },
   env: {
     GITHUB_ACCESS_TOKEN: process.env.GITHUB_ACCESS_TOKEN,
-    GITHUB_API_URL: process.env.GITHUB_API_URL
+    GITHUB_API_URL: process.env.GITHUB_API_URL,
+    GOOGLE_DRIVE_URL: process.env.GOOGLE_DRIVE_URL,
   }
 }
 

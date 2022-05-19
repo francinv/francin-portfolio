@@ -1,6 +1,7 @@
+import React, { FC } from 'react';
 import style from './Icon.module.css';
 
-export const GithubIcon = () => {
+export const GithubIcon: FC = () => {
     return (
         <svg width="55" height="56" viewBox="0 0 55 56" xmlns="http://www.w3.org/2000/svg" className={style.hover_fill}>
             <path className={style.hover_element} d="M55 27.6538C55 12.466 42.6878 0.153839 27.5 0.153839C12.3122 0.153839 0 12.466 0 27.6538C0 42.8417 12.3122 55.1538 27.5 55.1538C42.6878 55.1538 55 42.8417 55 27.6538Z" fill='#231E1B'/>

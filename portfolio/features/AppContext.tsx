@@ -1,8 +1,8 @@
 import React, { createContext, FC, useState } from "react";
-import { RepositoryType } from "../typings/commonTypes";
-import { ContextType, GithubStatistics, MostUsedLanguages, MyRepositories } from "../typings/contextType";
+import { contextType, githubStatisticsContext, topLangContext, myRepositoryContext } from "../typings/contextType";
+import { repositoriesType } from "../typings/repoTypes";
 
-const contextDefaultValues: ContextType = {
+const contextDefaultValues: contextType = {
     modalShow: false,
     modalType: "",
     fullSizeModal: false,
@@ -35,7 +35,7 @@ const contextDefaultValues: ContextType = {
     setFilterRepositoriesFn: () => {},
 };
 
-export const PortfolioContext = createContext<ContextType>(contextDefaultValues);
+export const PortfolioContext = createContext<contextType>(contextDefaultValues);
 
 const PortfolioProvider: FC = ({children}) => {
     const [modalShow, setModalShow] = useState<boolean>(contextDefaultValues.modalShow);
@@ -43,10 +43,10 @@ const PortfolioProvider: FC = ({children}) => {
     const [fullSizeModal, setFullSizeModal] = useState<boolean>(contextDefaultValues.fullSizeModal);
     const [viewType, setViewType] = useState<string>(contextDefaultValues.viewType);
     const [searchValue, setSearchValue] = useState<string>(contextDefaultValues.searchValue);
-    const [githubStatistic, setGithubStatistic] = useState<GithubStatistics>(contextDefaultValues.githubStatistic);
-    const [mostUsedLanguages, setMostUsedLanguages] = useState<MostUsedLanguages>(contextDefaultValues.mostUsedLanguages);
-    const [myRepositories, setMyRepositories] = useState<MyRepositories>(contextDefaultValues.myRepositories);
-    const [filteredRepositories, setFilteredRepositories] = useState<Array<RepositoryType>>(contextDefaultValues.filteredRepositories);
+    const [githubStatistic, setGithubStatistic] = useState<githubStatisticsContext>(contextDefaultValues.githubStatistic);
+    const [mostUsedLanguages, setMostUsedLanguages] = useState<topLangContext>(contextDefaultValues.mostUsedLanguages);
+    const [myRepositories, setMyRepositories] = useState<myRepositoryContext>(contextDefaultValues.myRepositories);
+    const [filteredRepositories, setFilteredRepositories] = useState<Array<repositoriesType>>(contextDefaultValues.filteredRepositories);
 
     const setModalShowFn = (value: boolean) => {
         setModalShow(value);
@@ -63,16 +63,16 @@ const PortfolioProvider: FC = ({children}) => {
     const setSearchValueFn = (value: string) => {
         setSearchValue(value);
     }
-    const setGithubStatisticFn = (value: GithubStatistics) => {
+    const setGithubStatisticFn = (value: githubStatisticsContext) => {
         setGithubStatistic(value);
     }
-    const setMostUsedLanguagesFn = (value: MostUsedLanguages) => {
+    const setMostUsedLanguagesFn = (value: topLangContext) => {
         setMostUsedLanguages(value);
     }
-    const setMyRepositoriesFn = (value: MyRepositories) => {
+    const setMyRepositoriesFn = (value: myRepositoryContext) => {
         setMyRepositories(value);
     }
-    const setFilterRepositoriesFn = (value: Array<RepositoryType>) => {
+    const setFilterRepositoriesFn = (value: Array<repositoriesType>) => {
         setFilteredRepositories(value);
     }
     return (
