@@ -17,6 +17,10 @@
     align-items: center;
 }
 
+.justify_center {
+    justify-content: center;
+}
+
 .justify_between {
     justify-content: space-between;
 }

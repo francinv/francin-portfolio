@@ -15,10 +15,8 @@
 
 .content_container {
     width: 90%;
-    height: 80%;
     background-color: #fff;
     font-family: 'Quicksand', sans-serif;
-    overflow: scroll;
 }
 
 .left_container {
