@@ -13,7 +13,7 @@
 
 .btn_selected {
     border-radius: 8px;
-    background-color: rgba(87, 88, 84, 0.5);
+    background-color: rgba(87, 88, 84, 0.5) !important;
 }
 
 .btn_custom {

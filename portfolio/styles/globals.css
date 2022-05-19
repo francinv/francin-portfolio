@@ -42,14 +42,14 @@ input[type="text"]:focus {
   overflow: hidden;
   margin-right: auto;
   white-space: nowrap;
-  animation: minor_typewriter 3.5s steps(40, end);
+  animation: minor_typewriter 2.5s steps(40, end);
 }
 
 .full_screen_animation {
   overflow: hidden;
   margin-right: auto;
   white-space: nowrap;
-  animation: full_typewriter 3.5s steps(40, end);
+  animation: full_typewriter 2.5s steps(40, end);
 }
 
 @keyframes minor_typewriter {
