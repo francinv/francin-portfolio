@@ -44,7 +44,7 @@ const FinderToolbar: FC = () => {
                 `}
             >
                 <SearchIcon />
-                <input id="search_field" type="text" placeholder={"Search for project or language"} value={searchValue} onChange={handleChange} autoFocus/>
+                <input id="search_field" type="text" placeholder="Search for project or language" value={searchValue} onChange={handleChange} autoFocus/>
             </form>
         </div>
     );

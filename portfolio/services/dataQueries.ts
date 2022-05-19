@@ -58,3 +58,36 @@ export const FETCH_LANGUAGES = gql`
         }
     }
 `;
+
+export const FETCH_REPOS = gql`
+{
+  viewer {
+    repositories(first: 100, ownerAffiliations: OWNER, isFork: false) {
+      nodes {
+        description
+        name
+        issues {
+          totalCount
+        }
+        languages(first: 100) {
+          nodes {
+            name
+          }
+        }
+        pullRequests {
+          totalCount
+        }
+        url
+        deployments(last: 1) {
+          nodes {
+            latestStatus {
+              state
+            }
+          }
+        }
+        openGraphImageUrl
+      }
+    }
+  }
+}
+`;
