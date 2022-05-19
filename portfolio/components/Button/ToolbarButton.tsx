@@ -9,7 +9,17 @@ interface ToolbarButtonProps {
     iconVisible: boolean;
 }
 
+/**
+ * ToolbarButton is the buttons used in the Toolbar. The ToolbarButton consists of the different window options: 
+ * - Close
+ * - Minimize
+ * - Maximize
+ * @param handleClick, Icon, iconVisible props. handleClick is the function that will be called when the button is clicked. 
+ * Icon is the icon that will be displayed on the button. iconVisible is a boolean that determines if the icon is visible or not.
+ * @returns JSX.Element
+ */
 const ToolbarButton: FC<ToolbarButtonProps> = ({ handleClick, Icon, iconVisible}) => {
+    
     return (
         <button 
             onClick={handleClick} 
@@ -22,7 +32,6 @@ const ToolbarButton: FC<ToolbarButtonProps> = ({ handleClick, Icon, iconVisible}
         >
             <Icon iconVisible={iconVisible} />
         </button>
-        
     );
 }
 

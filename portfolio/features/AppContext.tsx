@@ -2,6 +2,9 @@ import React, { createContext, FC, useState } from "react";
 import { contextType, githubStatisticsContext, topLangContext, myRepositoryContext } from "../typings/contextType";
 import { repositoriesType } from "../typings/repoTypes";
 
+/**
+ * Context default values for the application. This is the values that will be active when the application is started.
+ */
 const contextDefaultValues: contextType = {
     modalShow: false,
     modalType: "",
@@ -37,6 +40,11 @@ const contextDefaultValues: contextType = {
 
 export const PortfolioContext = createContext<contextType>(contextDefaultValues);
 
+/**
+ * Provider of the application context.
+ * @param children of the component.
+ * @returns JSX.Element
+ */
 const PortfolioProvider: FC = ({children}) => {
     const [modalShow, setModalShow] = useState<boolean>(contextDefaultValues.modalShow);
     const [modalType, setModalType] = useState<string>(contextDefaultValues.modalType);

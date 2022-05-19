@@ -10,6 +10,10 @@ import Competence from "./Competence";
 import { FETCH_PROFILE_PIC } from "../../services/dataQueries";
 import { useQuery } from "@apollo/client";
 
+/**
+ * CVContent is what shows the content of the CV.
+ * @returns JSX.Element
+ */
 const CVContent: FC = () => {
     return (
         <div
@@ -26,17 +30,25 @@ const CVContent: FC = () => {
     )
 }
 
+//Reusable ContactHeader component as a header.
 const ContactHeader = ({title}: {title: string}) => {return <p className={`${marginStyles.mb_0} ${commonStyles.font_medium}`}>{title}</p>}
 
+//Reusable ContactInfo component for ContactInformation.
 const ContactInfo = ({ text }: { text: string }) => {return <p style={{wordWrap: 'break-word'}} className={marginStyles.m_0}>{text}</p>}
 
+//Reusable ContentHeader component as a header.
 const ContentHeader = ({title}: {title: string}) => {
     return <h2 style={{borderBottom: '1px solid #141400', fontSize: 22, fontWeight: 600}}>{title}</h2>
 }
 
+/**
+ * The content on the left in the CV. This element contains: contact information, image of me, name and competencies.
+ * @returns JSX.Element
+ */
 const LeftContent: FC = () => {
-    const competencies = contactJson.contact_info.competencies;
+    const competencies = contactJson.contact_info.competencies; //Get competencies from cvContent.json
     
+    // Get the profile picture from GitHub and return it as a JSX.Element.
     const Avatar = () => {
         const { loading, error, data } = useQuery(FETCH_PROFILE_PIC);
         if (loading) return <p>Loading...</p>;
@@ -84,9 +96,15 @@ const LeftContent: FC = () => {
     )
 }
 
+/**
+ * Content of the right in the CV. This element contains: education, experience and a summary.
+ * @returns JSX.Element
+ */
 const RightContent: FC = () => {
     const experiences = contactJson.cv.experience;
     const education = contactJson.cv.education;
+
+    //Creating custom paragraph to reuse. 
     const Typography15 = ({text}: {text: string}) => {return <p className={`${marginStyles.m_0}`} style={{lineHeight: '22px', fontSize: '15px'}}>{text}</p>}
     const Typography18 = ({text}: {text: string}) => { return <p className={`${commonStyles.text_18} ${marginStyles.m_0}`} style={{lineHeight: '22px'}}>{text}</p> }
     const Typography18M = ({text}: {text: string}) => { return <p className={`${commonStyles.text_18} ${commonStyles.font_medium} ${marginStyles.m_0}`} style={{lineHeight: '22px'}}>{text}</p> }

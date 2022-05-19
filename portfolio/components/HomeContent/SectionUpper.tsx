@@ -19,7 +19,7 @@ const SectionUpper: FC = () => {
                 `}
             style={{width: '97%'}}
         >
-            <ProgramButton text="Terminal" index="Terminal" />
+            <ProgramButton text="Terminal" type="Terminal" />
             <div className={`${marginStyles.ml_auto} ${layoutStyles.flex_row}`}>
                 <LinkButton linkTo={githubLink} text="GitHub" /> 
                 <LinkButton linkTo={linkedinLink} text="LinkedIn" />

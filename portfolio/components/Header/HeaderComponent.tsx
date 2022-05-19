@@ -1,12 +1,30 @@
 import Image from "next/image";
-import React from "react";
+import React, { FC, useEffect, useState } from "react";
 import { todayDateString } from "../../util/dateUtil";
 import colorStyles from '../../styles/colors.module.css';
 import layoutStyles from '../../styles/layout.module.css';
 import marginStyles from '../../styles/margin.module.css';
 import commonStyles from '../../styles/common.module.css';
 
-const HeaderComponent: React.FC = () => {
+/**
+ * Component for displaying a header toolbar. The toolbar consists of 
+ * name and date in addition to an Apple logo.
+ * @returns JSX.Element
+ */
+const HeaderComponent: FC = () => {
+    // String of today's date.
+    const [dateString, setDateString] = useState(todayDateString());
+
+    useEffect(() => {
+        // Update dateString every minute.
+        const interval = setInterval(() => {
+            setDateString(todayDateString());
+        }, 1000);
+
+        // Clear interval when component is unmounted.
+        return () => clearInterval(interval);
+    }, []);
+
     const name = 'Francin Anoj Vincent';
     const textStyles = `${commonStyles.text_14} ${marginStyles.mx_0} ${marginStyles.my_8}`;
     return (
@@ -34,7 +52,7 @@ const HeaderComponent: React.FC = () => {
                 `}
             >
                 <p className={textStyles}>{name}</p>
-                <p className={textStyles}>{todayDateString()}</p>
+                <p className={textStyles}>{dateString}</p>
             </div>
         </header>
     );

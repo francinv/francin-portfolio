@@ -14,18 +14,32 @@ import { CommitIcon, ContributionIcon, IssueIcon, PRIcon, StarIcon } from "../Ic
 import style from "./Card.module.css";
 import OverviewComponent from "./OverviewComponent";
 
+/**
+ * GithubOverviewCard shows the user some statistics for my GitHub activity. 
+ * I got this idea from: https://github.com/anuraghazra and this repo: https://github.com/anuraghazra/github-readme-stats. 
+ * I have also looked at his work to determine the best way to fetch the data.
+ * @returns JSX.Element
+ */
 const GithubOverviewCard: FC = () => {
     const { githubStatistic, setGithubStatisticFn } = useContext(PortfolioContext);
 
     
     useEffect(() => {
+        /**
+         * Function to fetch data from the GitHub GraphQL API.
+         */
         const fetchStatistics = async () => {
+            // Fetch data.
             const response: ApolloQueryResult<statResponse> = await client.query({query: FETCH_GITHUB_STATISTICS});
             if (response) {
                 let stars = 0;
+
+                //Count stars by iterating through all the repositories.
                 response.data.viewer.repositories.nodes.forEach(repo => {
                     stars += repo.stargazers.totalCount;
                 });
+
+                //Set global state with fetched data.
                 setGithubStatisticFn({
                     ...githubStatistic,
                     status: 'success',
@@ -39,9 +53,12 @@ const GithubOverviewCard: FC = () => {
                 });
             }
         }
+
+        //To prevent unneccessary re-renders, check if the data is already fetched.
         if (githubStatistic.status === 'idle') {
             fetchStatistics();
         } 
+        
     }, [githubStatistic, setGithubStatisticFn]);
             
     return (
@@ -60,6 +77,7 @@ const GithubOverviewCard: FC = () => {
         >
             <h3 className={`${marginStyles.m_0} ${marginStyles.mb_8}`}>GitHub Statistics</h3>
             {
+                //Conditional rendering, if the data is not fetched yet, show loading animation.
                 githubStatistic.statistics
                 ?   <>
                         <OverviewComponent Icon={StarIcon} title="Total stars: " value={githubStatistic.statistics.stars} />

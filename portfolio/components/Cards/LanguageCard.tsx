@@ -15,14 +15,26 @@ import { PortfolioContext } from "../../features/AppContext";
 import Loading from "../common/Loading/Loading";
 import { langType } from "../../typings/languageTypes";
 
+/**
+ * LanguageCard is a card that show the user the most used languages by me.
+ * I got this idea from: https://github.com/anuraghazra and this repo: https://github.com/anuraghazra/github-readme-stats. 
+ * I have also looked at his work to determine the best way to fetch the data.
+ * @returns JSX.Element
+ */
 const LanguageCard = () => {
     const { mostUsedLanguages, setMostUsedLanguagesFn } = useContext(PortfolioContext);
 
     useEffect(() => {
+
+        // Function to fetch data from the GitHub GraphQL API.
         const fetchMostUsedLanguages = async () => {
+            // Fetch data.
             const response: ApolloQueryResult<langResponse> = await client.query({query: FETCH_LANGUAGES});
+
             if (response) {
                 let langArray: Array<langType> = [];
+
+                //Push every element to langArray, instead of keeping the whole response.
                 response.data.viewer.repositories.nodes.forEach(node => {
                     node.languages.edges.forEach(edge => {
                         const language = {
@@ -33,6 +45,8 @@ const LanguageCard = () => {
                         langArray.push(language);
                     });
                 });
+
+                //Reducing the array by checking if the language is already in the array. If it is I will add the size.
                 const temporaryReducedArray = langArray.reduce( 
                     function(acc: {[x: string]: langType}, node) {
                         let langSize = node.size;
@@ -50,11 +64,16 @@ const LanguageCard = () => {
                           },
                         };
                 }, {});
+
+                //Since the array is now turned into an Object I turn it back into an array.
                 langArray = Object.values(temporaryReducedArray);
+
+                //Sort the array by size and only keep the first 5 elements.
                 langArray = langArray
                     .sort((a, b) => b.size - a.size)
                     .slice(0, 5);
     
+                //Set the mostUsedLanguages global state.
                 setMostUsedLanguagesFn({
                     status: 'success',
                     error: null,
@@ -86,6 +105,7 @@ const LanguageCard = () => {
         >
             <h3 className={`${marginStyles.m_0} ${marginStyles.mb_8}`}>Most used languages</h3>
             {
+                //If the data is not completely fetched yet or the state is not set, show a loading animation.
                 mostUsedLanguages.languagesArray.length > 0 
                 ?   mostUsedLanguages.languagesArray.map(language => (
                         <LanguagePercentageComponent

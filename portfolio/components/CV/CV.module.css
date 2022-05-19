@@ -51,14 +51,23 @@
     margin-right: 1px;
 }
 
+/*
+* This class shows a gray circle, this is used for the circles in the experience section.
+*/
 .circle_empty {
     background-color: #A5A5A5;
 }
 
+/*
+* This class shows a half circle, this is used for the circles in the experience section.
+*/
 .circle_half {
     background: linear-gradient(90deg, #000 50%, #A5A5A5 50%);
 }
 
+/*
+* This class shows a full circle, this is used for the circles in the experience section.
+*/
 .circle_filled {
     background-color: #000;
 }

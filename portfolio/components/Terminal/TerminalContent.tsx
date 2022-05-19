@@ -6,6 +6,10 @@ import commonStyles from "../../styles/common.module.css";
 import layoutStyles from "../../styles/layout.module.css";
 import { PortfolioContext } from "../../features/AppContext";
 
+/**
+ * Content of the terminal window.
+ * @returns JSX.Element
+ */
 const TerminalContent: FC = () => {
     const [isVisible, setIsVisible] = useState(false);
     const { fullSizeModal } = useContext(PortfolioContext);
@@ -15,6 +19,11 @@ const TerminalContent: FC = () => {
         isVisible: boolean;
     }
 
+    /**
+     * Display information about me. This component should be displayed after typewriter animation.
+     * @param isVisible to determine if this component should be visible or not.
+     * @returns JSX.Element or null
+     */
     const About: FC<AboutProps> = ({isVisible}) => {
         if (isVisible) {
             return (
@@ -57,7 +66,7 @@ const TerminalContent: FC = () => {
                 className={`
                     ${commonStyles.text_16} 
                     ${commonStyles.text_monaco} 
-                    ${fullSizeModal ? "full_screen_animation" : "minor_screen_animation" }
+                    ${fullSizeModal ? "full_screen_animation" : "minor_screen_animation" } 
                 `}
                 onAnimationStart={() => setIsVisible(false)}
                 onAnimationEnd={() => setIsVisible(true)}

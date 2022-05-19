@@ -11,6 +11,12 @@ interface LanguagePercentageComponentProps {
     color: string;
 }
 
+/**
+ * LanguagePercentageComponent is a component that shows the percentage of a specific language.
+ * Based on the percentage it will show a colored bar.
+ * @param language, the name of the language. percentage of the language and color of the language. 
+ * @returns JSX.Element
+ */
 const LanguagePercentageComponent: FC<LanguagePercentageComponentProps> = ({ language, percentage, color }) => {
 
     return (

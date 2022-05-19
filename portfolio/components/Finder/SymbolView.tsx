@@ -9,6 +9,11 @@ import { PortfolioContext } from "../../features/AppContext";
 const SymbolView: FC = () => {
     const { filteredRepositories, fullSizeModal } = useContext(PortfolioContext);
 
+    /**
+     * Helper method to determine if the modal is fullSize or not. 
+     * The grid view will change based on this.
+     * @returns string with styling classes based on if fullSizeModal is true or not.
+     */
     const getClassesForSymbolContainer = () => {
         if (fullSizeModal) {
             return `${style.symbol_container} ${marginStyles.my_auto} ${paddingStyles.px_35} ${layoutStyles.justify_center} ${style.large_grid}`
@@ -19,6 +24,8 @@ const SymbolView: FC = () => {
     
     return (
         <div className={getClassesForSymbolContainer()}>
+            {/* Map repositories and show them as symbols, by clicking a specific element the user will be redirected
+            to the repository page. */}
             {
                 filteredRepositories.map((repository, index) => (
                     <a 

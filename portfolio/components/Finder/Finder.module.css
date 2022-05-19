@@ -13,6 +13,9 @@
     border: 0.5px solid #575458;
 }
 
+/*
+* Give a background color to element on hover.
+*/
 .hover_container:hover {
     border-radius: 8px;
     background-color: rgba(87, 88, 84, 0.5);
@@ -29,11 +32,17 @@
     display: grid;
 }
 
+/*
+* Grid for small modal.
+*/
 .small_grid {
     grid-gap: 20px;
     grid-template-columns: repeat(6, 130px);
 }
 
+/*
+* Grid for full screen modal.
+*/
 .large_grid {
     grid-gap: 30px;
     grid-template-columns: repeat(8, 130px);
@@ -61,6 +70,9 @@
     height: 75%;
 }
 
+/*
+* Special style for selected elements.
+*/
 .selected {
     background: rgba(91, 88, 91, 0.5);
     border-radius: 8px;

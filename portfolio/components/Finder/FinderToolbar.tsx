@@ -30,8 +30,8 @@ const FinderToolbar: FC = () => {
             <ToolbarButtonSection />
             <h4 className={`${marginStyles.ml_30}`}>My projects</h4>
             <div className={`${marginStyles.ml_auto} ${style.hover_container}`} style={{marginRight: '60px'}}>
-                <FinderButton index="galleryView" />
-                <FinderButton index="symbolView" />
+                <FinderButton type="galleryView" />
+                <FinderButton type="symbolView" />
             </div>
             <form 
                 id="search_form"

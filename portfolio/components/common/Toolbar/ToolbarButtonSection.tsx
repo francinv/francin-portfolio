@@ -4,6 +4,10 @@ import { CrossIcon, EnhanceIcon, MinusIcon } from "../../Icons/ToolbarIcons";
 import layoutStyles from "../../../styles/layout.module.css";
 import { PortfolioContext } from "../../../features/AppContext";
 
+/**
+ * ToolbarButtonSection is a component that shows buttons that have functions for controlling the modal.
+ * @returns JSX.Element
+ */
 const ToolbarButtonSection: FC = () => {
     const[iconVisible, setIconVisible] = useState(false);
     const { setModalShowFn, setFullSizeModalFn, fullSizeModal } = useContext(PortfolioContext);

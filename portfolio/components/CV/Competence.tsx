@@ -8,8 +8,18 @@ interface CompetenceProps {
     value: number;
     sizeOfArray: number;
 }
-const Competence: FC<CompetenceProps> = ({title, value}) => {
 
+/**
+ * This component is used to show my knowledge for a specific language. 
+ * @param title of the language and value from (0-5). 
+ * @returns JSX.Element
+ */
+const Competence: FC<CompetenceProps> = ({ title, value }) => {
+
+    /**
+     * Function to create 5 circles based on the value passed in as props. 
+     * @returns a list of classes.
+     */
     const buildCircles = () => {
         const fullCircles = [];
         for (let i = 0; i < 5; i++) {

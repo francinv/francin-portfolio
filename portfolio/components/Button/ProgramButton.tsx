@@ -10,19 +10,28 @@ import { PortfolioContext } from "../../features/AppContext";
 
 interface ProgramButtonProps {
     text: string,
-    index: string,
+    type: string,
 }
 
-const ProgramButton: React.FC<ProgramButtonProps> = ({text, index}) => {
+/**
+ * ProgramButton is a button that opens an overlay with wanted content.
+ * @param text to display under Icon, type of ProgramButton.
+ * @returns 
+ */
+const ProgramButton: React.FC<ProgramButtonProps> = ({text, type}) => {
     const { setModalShowFn, setModalTypeFn} = useContext(PortfolioContext);
 
+    /**
+     * Function to determine what Icon to return based on the type.
+     * @returns JSX.Element of Icon
+     */
     function getIconComponent() {
-        switch(text) {
+        switch(type) {
             case 'Terminal':
                 return <TerminalIcon />
-            case 'My projects':
+            case 'Projects':
                 return <FolderIcon height="60"/>
-            case 'CV.pdf':
+            case 'CV':
                 return <FileIcon />
         }
     }
@@ -39,9 +48,9 @@ const ProgramButton: React.FC<ProgramButtonProps> = ({text, index}) => {
             `} 
             onClick={() => {
                 setModalShowFn(true);
-                setModalTypeFn(index);
+                setModalTypeFn(type);
             }} 
-            key={index}
+            key={type}
         >
             {getIconComponent()}
             <p className={`${commonStyles.text_16}`}>{text}</p>

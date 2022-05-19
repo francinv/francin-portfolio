@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import { GithubIcon } from "../Icons/GitHub";
 import { LinkedInIcon } from "../Icons/LinkedIn";
 import style from './Button.module.css';
@@ -10,8 +10,17 @@ interface LinkButtonProps {
     text: string
 }
 
-const LinkButton: React.FC<LinkButtonProps> = ({linkTo, text}) => {
+/**
+ * LinkButton is a link used that will redirect user to a specific page.
+ * @param linkTo is the url of the website, text is the text that will be displayed under the link. 
+ * @returns JSX.Element
+ */
+const LinkButton: FC<LinkButtonProps> = ({ linkTo, text }) => {
 
+    /**
+     * Method to return correct icon based on text passed as prop.
+     * @returns JSX.Element of Icon
+     */
     function getIconComponent() {
         switch(text) {
             case 'GitHub':

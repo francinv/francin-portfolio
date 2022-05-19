@@ -8,6 +8,10 @@ import buttonStyle from "../Button/Button.module.css";
 import ToolbarButtonSection from "../common/Toolbar/ToolbarButtonSection";
 import DownloadIcon from "../Icons/DownloadIcon";
 
+/**
+ * Toolbar in the CV Window.
+ * @returns JSX.Element
+ */
 const CVToolbar: FC = () => {
     return (
         <div 

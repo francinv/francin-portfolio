@@ -3,6 +3,11 @@ import { setContext } from '@apollo/client/link/context';
 
 const httpLink = new HttpLink({uri: process.env.GITHUB_API_URL});
 
+/**
+ * Apollo client configuration
+ * @param {string} token
+ * @returns {ApolloClient}
+*/
 const authLink = setContext((_, {headers}) => {
     const token = process.env.GITHUB_ACCESS_TOKEN;
     return {
@@ -13,6 +18,9 @@ const authLink = setContext((_, {headers}) => {
     }
 });
 
+/**
+ * Apollo client configuration
+*/
 export const client = new ApolloClient({
     link: authLink.concat(httpLink),
     cache: new InMemoryCache()

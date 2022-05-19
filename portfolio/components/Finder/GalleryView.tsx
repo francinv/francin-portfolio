@@ -16,6 +16,11 @@ interface ButtonProps {
     setSelectedRepo: Dispatch<SetStateAction<repositoriesType | undefined>>;
 }
 
+/**
+ * Create simple button with a folder Icon for displaying under the image of selected repository.
+ * @param repo of the specific button and setSelectedRepo function for updating the state. 
+ * @returns JSX.Element
+ */
 const GalleryButton: FC<ButtonProps> = ({repo, setSelectedRepo}) => {
 
     const handleClick = () => {
@@ -29,17 +34,29 @@ const GalleryButton: FC<ButtonProps> = ({repo, setSelectedRepo}) => {
     );
 };
 
+/**
+ * Main component for displaying the gallery view.
+ * @returns JSX.Element
+ */
 const GalleryView: FC = () => {
     const { filteredRepositories } = useContext(PortfolioContext);
     const [selectedRepo, setSelectedRepo] = useState<repositoriesType>();
 
     useEffect(() => {
+
+        // Set selectedRepo if not set yet. This is to prevent the selectedRepo from being undefined.
         if (filteredRepositories.length > 0 && !selectedRepo) {
             setSelectedRepo(filteredRepositories[0]);
         }
         
+        // useEffect will be called every time the filteredRepositories and selectedRepo state changes.
     }, [filteredRepositories, selectedRepo]);
 
+    /**
+     * Helper function to check if the specific element is selected. 
+     * @param repo wanted repository.
+     * @returns string with styling classes based on if selected or not.
+     */
     const getIsSelectedStyling = (repo: repositoriesType) => {
         let styles = `${paddingStyles.p_5} ${style.btn_container} ${layoutStyles.flex_row} ${layoutStyles.center_all}`
         return repo === selectedRepo ? styles + ` ${style.selected}` : styles;
@@ -50,6 +67,13 @@ const GalleryView: FC = () => {
         text: string | number;
     }
 
+    /**
+     * Container for displaying information about the repository. This is a reusable component,
+     * did not make it global because it is not used in other components.
+     * @param {string} label of the specific element.
+     * @param {string} text value.
+     * @returns JSX.Element
+     */
     const InformationContainer: FC<InformationProps> = ({label, text}) => {
         return (
             <div className={`${layoutStyles.flex_row} ${style.information_container} ${paddingStyles.px_8}`}>
@@ -66,6 +90,7 @@ const GalleryView: FC = () => {
                 <div className={`${style.left_content} ${layoutStyles.flex_col}`}>
                     <div className={`${style.repo_img_container} ${paddingStyles.px_50} ${layoutStyles.flex_row} ${layoutStyles.center_all}`}>
                         <div className={`${style.repo_img_inner}`}>
+                            {/*Gallery Image is wrapped in a link to open in a new tab. */}
                             <a href={selectedRepo.url} target="_blank" rel="noreferrer">
                                 <Image
                                 src={selectedRepo.openGraphImageUrl}
@@ -76,6 +101,7 @@ const GalleryView: FC = () => {
                         </div>
                     </div>
                     <div className={`${layoutStyles.flex_row} ${paddingStyles.py_16} ${paddingStyles.px_8} ${layoutStyles.items_center}`} style={{overflowY: "hidden", overflowX: 'scroll'}}>
+                        {/* Map repositories and display them in a row. */}
                         {filteredRepositories.map((repo, index) => (
                             <div key={index} className={getIsSelectedStyling(repo)}>
                                 <GalleryButton repo={repo} setSelectedRepo={setSelectedRepo} />
@@ -92,6 +118,7 @@ const GalleryView: FC = () => {
                         </a>
                     </div>
                     <div className={`${style.description_container} ${marginStyles.mx_16} ${layoutStyles.flex_col} ${marginStyles.my_auto}`} style={{overflowY: 'scroll'}}>
+                        {/*Showing information about the selected repository. */}
                         <h4 className={`${marginStyles.mt_5}`}>Information</h4>
                         <InformationContainer label="Description:" text={selectedRepo.description} />
                         <InformationContainer label="Issues:" text={selectedRepo.issues.totalCount} />
@@ -106,7 +133,7 @@ const GalleryView: FC = () => {
             </div>
         )
     } else {
-        return <Loading />
+        return <Loading /> //Shows Loading component if selectedRepo is not set yet.
     }
 };
 
