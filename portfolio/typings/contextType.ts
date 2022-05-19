@@ -1,13 +1,17 @@
 import { LanguageType, RepositoryType } from "./commonTypes";
 
 export type GithubStatistics = {
+    status: string;
+    error: string | null;
+    statistics: Statistics | undefined;
+}
+
+export type Statistics = {
     stars: number;
     commits: number;
     prs: number;
     issues: number;
     contributions: number;
-    status: string;
-    error: string | null;
 }
 
 export type MostUsedLanguages = {

@@ -9,13 +9,9 @@ const contextDefaultValues: ContextType = {
     viewType: "galleryView",
     searchValue: "",
     githubStatistic: {
-        stars: 0,
-        commits: 0,
-        prs: 0,
-        issues: 0,
-        contributions: 0,
         status: 'idle',
         error: null,
+        statistics: undefined,
     },
     mostUsedLanguages: {
         status: 'idle',

@@ -9,6 +9,7 @@ import layoutStyles from '../../styles/layout.module.css';
 import marginStyles from '../../styles/margin.module.css';
 import paddingStyles from '../../styles/padding.module.css';
 import { StatisticsRepoResponse } from "../../typings/responseTypes";
+import Loading from "../common/Loading/Loading";
 import { CommitIcon, ContributionIcon, IssueIcon, PRIcon, StarIcon } from "../Icons/GithubOverviewIcons";
 import style from "./Card.module.css";
 import OverviewComponent from "./OverviewComponent";
@@ -26,15 +27,18 @@ const GithubOverviewCard: FC = () => {
             setGithubStatisticFn({
                 ...githubStatistic,
                 status: 'success',
-                stars: stars,
-                commits: response.data.viewer.contributionsCollection.totalCommitContributions,
-                prs: response.data.viewer.pullRequests.totalCount,
-                issues: response.data.viewer.issues.totalCount,
-                contributions: response.data.viewer.repositoriesContributedTo.totalCount,
+                statistics: {
+                    stars: stars,
+                    commits: response.data.viewer.contributionsCollection.totalCommitContributions,
+                    prs: response.data.viewer.pullRequests.totalCount,
+                    issues: response.data.viewer.issues.totalCount,
+                    contributions: response.data.viewer.repositoriesContributedTo.totalCount,
+                }
             });
         }
     }
     useEffect(() => {
+        console.log(githubStatistic);
         if (githubStatistic.status === 'idle') {
             fetchStatistics();
         } 
@@ -55,11 +59,17 @@ const GithubOverviewCard: FC = () => {
             `}
         >
             <h3 className={`${marginStyles.m_0} ${marginStyles.mb_8}`}>GitHub Statistics</h3>
-            <OverviewComponent Icon={StarIcon} title="Total stars: " value={githubStatistic.stars} />
-            <OverviewComponent Icon={CommitIcon} title="Total commits: " value={githubStatistic.commits} />
-            <OverviewComponent Icon={PRIcon} title="Total PRs: " value={githubStatistic.prs} />
-            <OverviewComponent Icon={IssueIcon} title="Total Issues: " value={githubStatistic.issues} />
-            <OverviewComponent Icon={ContributionIcon} title="Total Contributions: " value={githubStatistic.contributions} />
+            {
+                githubStatistic.statistics
+                ?   <>
+                        <OverviewComponent Icon={StarIcon} title="Total stars: " value={githubStatistic.statistics.stars} />
+                        <OverviewComponent Icon={CommitIcon} title="Total commits: " value={githubStatistic.statistics.commits} />
+                        <OverviewComponent Icon={PRIcon} title="Total PRs: " value={githubStatistic.statistics.prs} />
+                        <OverviewComponent Icon={IssueIcon} title="Total Issues: " value={githubStatistic.statistics.issues} />
+                        <OverviewComponent Icon={ContributionIcon} title="Total Contributions: " value={githubStatistic.statistics.contributions} />
+                    </>
+                : <Loading />
+            }
         </div>
     )
 }

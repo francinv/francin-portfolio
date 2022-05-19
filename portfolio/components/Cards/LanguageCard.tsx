@@ -13,6 +13,7 @@ import { LanguageType } from "../../typings/commonTypes";
 import { getPercentageFromNumber } from "../../util/getPercentage";
 import { client } from "../../services/apolloConfig";
 import { PortfolioContext } from "../../features/AppContext";
+import Loading from "../common/Loading/Loading";
 
 const LanguageCard = () => {
     const { mostUsedLanguages, setMostUsedLanguagesFn } = useContext(PortfolioContext);
@@ -83,15 +84,18 @@ const LanguageCard = () => {
         >
             <h3 className={`${marginStyles.m_0} ${marginStyles.mb_8}`}>Most used languages</h3>
             {
-                mostUsedLanguages.languagesArray.map(language => (
-                    <LanguagePercentageComponent
-                        key={language.name}
-                        language={language.name}
-                        color={language.color}
-                        percentage={getPercentageFromNumber(language.size, mostUsedLanguages.languagesArray.reduce((acc, node) => acc + node.size, 0))}
-                    />
-                ))
+                mostUsedLanguages.languagesArray.length > 0 
+                ?   mostUsedLanguages.languagesArray.map(language => (
+                        <LanguagePercentageComponent
+                            key={language.name}
+                            language={language.name}
+                            color={language.color}
+                            percentage={getPercentageFromNumber(language.size, mostUsedLanguages.languagesArray.reduce((acc, node) => acc + node.size, 0))}
+                        />
+                    ))
+                : <Loading />
             }
+            
         </div>
     )
 }
