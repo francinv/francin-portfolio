@@ -1,5 +1,7 @@
-import { useQuery } from "@apollo/client";
-import React, { FC } from "react";
+import { ApolloQueryResult, useQuery } from "@apollo/client";
+import React, { FC, useContext, useEffect } from "react";
+import { PortfolioContext } from "../../features/AppContext";
+import { client } from "../../services/apolloConfig";
 import { FETCH_GITHUB_STATISTICS } from "../../services/dataQueries";
 import colorStyles from '../../styles/colors.module.css';
 import commonStyles from '../../styles/common.module.css';
@@ -12,41 +14,32 @@ import style from "./Card.module.css";
 import OverviewComponent from "./OverviewComponent";
 
 const GithubOverviewCard: FC = () => {
+    const { githubStatistic, setGithubStatisticFn } = useContext(PortfolioContext);
 
-    const GithubData = () => {
-        const {loading, error, data} = useQuery<StatisticsRepoResponse>(FETCH_GITHUB_STATISTICS);
-        if (loading) return <div>Loading...</div>;
-        if (error) return <div>Error :(</div>;
-
-        let statistics = {
-            stars: 0,
-            commits: 0,
-            prs: 0,
-            issues: 0,
-            contributions: 0
-        }
-
-        if (data) {
-            statistics.commits = data.viewer.contributionsCollection.totalCommitContributions;
-            statistics.prs = data.viewer.pullRequests.totalCount;
-            statistics.issues = data.viewer.issues.totalCount;
-            statistics.contributions = data.viewer.repositoriesContributedTo.totalCount;
-        
-            data.viewer.repositories.nodes.forEach(element => {
-                statistics.stars += element.stargazers.totalCount;
+    const fetchStatistics = async () => {
+        const response: ApolloQueryResult<StatisticsRepoResponse> = await client.query({query: FETCH_GITHUB_STATISTICS});
+        if (response) {
+            let stars = 0;
+            response.data.viewer.repositories.nodes.forEach(repo => {
+                stars += repo.stargazers.totalCount;
+            });
+            setGithubStatisticFn({
+                ...githubStatistic,
+                status: 'success',
+                stars: stars,
+                commits: response.data.viewer.contributionsCollection.totalCommitContributions,
+                prs: response.data.viewer.pullRequests.totalCount,
+                issues: response.data.viewer.issues.totalCount,
+                contributions: response.data.viewer.repositoriesContributedTo.totalCount,
             });
         }
-
-        return (
-            <>
-                <OverviewComponent Icon={StarIcon} title="Total stars: " value={statistics.stars} />
-                <OverviewComponent Icon={CommitIcon} title="Total commits: " value={statistics.commits} />
-                <OverviewComponent Icon={PRIcon} title="Total PRs: " value={statistics.prs} />
-                <OverviewComponent Icon={IssueIcon} title="Total Issues: " value={statistics.issues} />
-                <OverviewComponent Icon={ContributionIcon} title="Total Contributions: " value={statistics.contributions} />
-            </>
-        )
     }
+    useEffect(() => {
+        if (githubStatistic.status === 'idle') {
+            fetchStatistics();
+        } 
+    }, [githubStatistic]);
+            
     return (
         <div className={`
                 ${commonStyles.rounded_10} 
@@ -62,7 +55,11 @@ const GithubOverviewCard: FC = () => {
             `}
         >
             <h3 className={`${marginStyles.m_0} ${marginStyles.mb_8}`}>GitHub Statistics</h3>
-            <GithubData />
+            <OverviewComponent Icon={StarIcon} title="Total stars: " value={githubStatistic.stars} />
+            <OverviewComponent Icon={CommitIcon} title="Total commits: " value={githubStatistic.commits} />
+            <OverviewComponent Icon={PRIcon} title="Total PRs: " value={githubStatistic.prs} />
+            <OverviewComponent Icon={IssueIcon} title="Total Issues: " value={githubStatistic.issues} />
+            <OverviewComponent Icon={ContributionIcon} title="Total Contributions: " value={githubStatistic.contributions} />
         </div>
     )
 }

@@ -9,7 +9,6 @@ export type RepositoryType = {
         nodes: [
             {
                 name: string;
-                color: string;
             }
         ]
     };
@@ -29,13 +28,10 @@ export type RepositoryType = {
     openGraphImageUrl: string;
 }
 
-export type ResponseType = {
-    data: {
-        viewer: {
-            login: string;
-            repositories: {
-                nodes: RepositoryType[];
-            }
+export type RepositoriesResponseType = {
+    viewer: {
+        repositories: {
+            nodes: RepositoryType[];
         }
     }
 }

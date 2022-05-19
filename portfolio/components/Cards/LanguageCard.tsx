@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import style from './Card.module.css';
 import LanguagePercentageComponent from "./LanguagePercentageComponent";
 import marginStyles from '../../styles/margin.module.css';
@@ -7,23 +7,27 @@ import commonStyles from '../../styles/common.module.css';
 import paddingStyles from '../../styles/padding.module.css';
 import colorStyles from '../../styles/colors.module.css';
 import { FETCH_LANGUAGES } from "../../services/dataQueries";
-import { useQuery } from "@apollo/client";
+import { ApolloQueryResult, useQuery } from "@apollo/client";
 import { LanguageEdge, LanguageNode, LanguageResponse } from "../../typings/responseTypes";
 import { LanguageType } from "../../typings/commonTypes";
 import { getPercentageFromNumber } from "../../util/getPercentage";
+import { client } from "../../services/apolloConfig";
+import { PortfolioContext } from "../../features/AppContext";
 
 const LanguageCard = () => {
+    const { mostUsedLanguages, setMostUsedLanguagesFn } = useContext(PortfolioContext);
 
-    const MostPopularLanguages = () => {
-        const { loading, error, data } = useQuery<LanguageResponse>(FETCH_LANGUAGES);
-        if (loading) return <div>Loading...</div>;
-        if (error) return <div>Went wrong</div>;
+    useEffect(() => {
+        if (mostUsedLanguages.status === 'idle') {
+            fetchMostUsedLanguages();
+        }
+    }, [mostUsedLanguages]);
 
-        let langArray: Array<LanguageType> = [];
-        let totalSize:number = 0;
-        if (data) {
-            totalSize = data.viewer.repositories.nodes.reduce((acc, node) => acc + node.languages.totalSize, 0);
-            data.viewer.repositories.nodes.forEach(node => {
+    const fetchMostUsedLanguages = async () => {
+        const response: ApolloQueryResult<LanguageResponse> = await client.query({query: FETCH_LANGUAGES});
+        if (response) {
+            let langArray: Array<LanguageType> = [];
+            response.data.viewer.repositories.nodes.forEach(node => {
                 node.languages.edges.forEach(edge => {
                     const language = {
                         name: edge.node.name,
@@ -54,36 +58,13 @@ const LanguageCard = () => {
             langArray = langArray
                 .sort((a, b) => b.size - a.size)
                 .slice(0, 5);
+
+            setMostUsedLanguagesFn({
+                status: 'success',
+                error: null,
+                languagesArray: langArray,
+            });  
         }
-        return (
-            <>
-                <LanguagePercentageComponent
-                    language={langArray[0].name}
-                    color={langArray[0].color}
-                    percentage={getPercentageFromNumber(langArray[0].size, totalSize)}
-                />
-                <LanguagePercentageComponent
-                    language={langArray[1].name}
-                    color={langArray[1].color}
-                    percentage={getPercentageFromNumber(langArray[1].size, totalSize)}
-                />
-                <LanguagePercentageComponent
-                    language={langArray[2].name}
-                    color={langArray[2].color}
-                    percentage={getPercentageFromNumber(langArray[2].size, totalSize)}
-                />
-                <LanguagePercentageComponent
-                    language={langArray[3].name}
-                    color={langArray[3].color} 
-                    percentage={getPercentageFromNumber(langArray[3].size, totalSize)}
-                />
-                <LanguagePercentageComponent
-                    language={langArray[4].name}
-                    color={langArray[4].color}  
-                    percentage={getPercentageFromNumber(langArray[4].size, totalSize)}
-                />
-            </>
-        )
     }
 
     return (
@@ -101,7 +82,16 @@ const LanguageCard = () => {
             `}
         >
             <h3 className={`${marginStyles.m_0} ${marginStyles.mb_8}`}>Most used languages</h3>
-            <MostPopularLanguages />
+            {
+                mostUsedLanguages.languagesArray.map(language => (
+                    <LanguagePercentageComponent
+                        key={language.name}
+                        language={language.name}
+                        color={language.color}
+                        percentage={getPercentageFromNumber(language.size, mostUsedLanguages.languagesArray.reduce((acc, node) => acc + node.size, 0))}
+                    />
+                ))
+            }
         </div>
     )
 }
