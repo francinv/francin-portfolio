@@ -29,8 +29,8 @@ const FinderButton: FC<FinderButtonProps> = ({index}) => {
             onClick={handleClick} 
             className={
                 viewType === index 
-                ? `${style.btn_selected} ${style.btn_finder}` 
-                : `${style.btn_finder}`
+                ? `${style.btn_selected} ${style.btn_custom}` 
+                : `${style.btn_custom}`
             }
         >
             {getIcon()}

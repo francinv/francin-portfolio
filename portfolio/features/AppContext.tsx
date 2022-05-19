@@ -37,7 +37,7 @@ const contextDefaultValues: ContextType = {
 
 export const PortfolioContext = createContext<ContextType>(contextDefaultValues);
 
-const PortfolioProvider:FC = ({children}) => {
+const PortfolioProvider: FC = ({children}) => {
     const [modalShow, setModalShow] = useState<boolean>(contextDefaultValues.modalShow);
     const [modalType, setModalType] = useState<string>(contextDefaultValues.modalType);
     const [fullSizeModal, setFullSizeModal] = useState<boolean>(contextDefaultValues.fullSizeModal);

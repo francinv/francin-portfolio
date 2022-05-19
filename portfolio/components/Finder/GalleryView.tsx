@@ -24,7 +24,7 @@ const GalleryButton: FC<ButtonProps> = ({repo, setSelectedRepo}) => {
     }
 
     return (
-        <button className={`${buttonStyle.btn_remove_style}`} onClick={handleClick}>
+        <button className={`${buttonStyle.btn_custom}`} onClick={handleClick}>
             <FolderIcon height={"50"} />
         </button>
     );
@@ -43,7 +43,7 @@ const GalleryView: FC = () => {
 
     const getIsSelectedStyling = (repo: RepositoryType) => {
         let styles = `${paddingStyles.p_5} ${style.btn_container} ${layoutStyles.flex_row} ${layoutStyles.center_all}`
-        return repo === selectedRepo ? styles + ` ${style.btn_selected}` : styles;
+        return repo === selectedRepo ? styles + ` ${style.selected}` : styles;
     }
 
     interface InformationProps {
@@ -53,9 +53,10 @@ const GalleryView: FC = () => {
 
     const InformationContainer: FC<InformationProps> = ({label, text}) => {
         return (
-            <div className={`${layoutStyles.flex_row} ${style.info_container} ${paddingStyles.px_8}`}>
-                <p className={`${colorStyle.text_gray} ${commonStyle.text_14}`} style={{width: '30%'}}>{label}</p>
-                <p className={`${colorStyle.text_white} ${commonStyle.text_14} ${marginStyles.ml_6}`} style={{width: '70%'}}>{text}</p>
+            <div className={`${layoutStyles.flex_row} ${style.information_container} ${paddingStyles.px_8}`}>
+                <p 
+                    className={`${commonStyle.text_14}`} style={{width: '30%', color: '#908E90'}}>{label}</p>
+                <p className={commonStyle.text_14} style={{width: '70%', marginLeft: '6px'}}>{text}</p>
             </div>
         )
     }
@@ -63,9 +64,9 @@ const GalleryView: FC = () => {
     if (selectedRepo) {
         return (
             <div className={`${layoutStyles.flex_row} ${paddingStyles.pt_5}`} style={{height: '100%'}}>
-                <div className={`${style.left_gallery_content} ${layoutStyles.flex_col}`}>
-                    <div className={`${style.gallery_img_container} ${paddingStyles.px_50} ${layoutStyles.flex_row} ${layoutStyles.center_all}`}>
-                        <div className={`${style.inner_img}`}>
+                <div className={`${style.left_content} ${layoutStyles.flex_col}`}>
+                    <div className={`${style.repo_img_container} ${paddingStyles.px_50} ${layoutStyles.flex_row} ${layoutStyles.center_all}`}>
+                        <div className={`${style.repo_img_inner}`}>
                             <a href={selectedRepo.url} target="_blank" rel="noreferrer">
                                 <Image
                                 src={selectedRepo.openGraphImageUrl}
@@ -84,15 +85,15 @@ const GalleryView: FC = () => {
                     </div>
 
                 </div>
-                <div className={`${style.right_gallery_content} ${layoutStyles.flex_col}`}>
-                    <div className={`${style.desc_container} ${marginStyles.mx_32} ${marginStyles.my_auto}`}>
+                <div className={`${style.right_content} ${layoutStyles.flex_col}`}>
+                    <div className={`${style.description_container} ${marginStyles.mx_32} ${marginStyles.my_auto}`}>
                         <a href={selectedRepo.url} target="_blank" rel="noreferrer" className={`${layoutStyles.flex_row} ${layoutStyles.items_center} ${marginStyles.ml_8}`}>
                             <FolderIcon height="50" />
-                            <h4 className={`${colorStyle.text_white}`}>{selectedRepo?.name}</h4>
+                            <h4>{selectedRepo?.name}</h4>
                         </a>
                     </div>
-                    <div className={`${style.desc_container} ${marginStyles.mx_16} ${layoutStyles.flex_col} ${marginStyles.my_auto}`} style={{overflowY: 'scroll'}}>
-                        <h4 className={`${colorStyle.text_white} ${marginStyles.mt_5}`}>Information</h4>
+                    <div className={`${style.description_container} ${marginStyles.mx_16} ${layoutStyles.flex_col} ${marginStyles.my_auto}`} style={{overflowY: 'scroll'}}>
+                        <h4 className={`${marginStyles.mt_5}`}>Information</h4>
                         <InformationContainer label="Description:" text={selectedRepo.description} />
                         <InformationContainer label="Issues:" text={selectedRepo.issues.totalCount} />
                         <InformationContainer label="Languages:" text={selectedRepo.languages.nodes.map(lang => lang.name).join(', ')} />

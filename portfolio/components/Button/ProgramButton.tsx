@@ -5,6 +5,7 @@ import { TerminalIcon } from "../Icons/Terminal";
 import style from './Button.module.css';
 import colorStyles from '../../styles/colors.module.css';
 import commonStyles from '../../styles/common.module.css';
+import layoutStyle from '../../styles/layout.module.css';
 import { PortfolioContext } from "../../features/AppContext";
 
 interface ProgramButtonProps {
@@ -20,7 +21,7 @@ const ProgramButton: React.FC<ProgramButtonProps> = ({text, index}) => {
             case 'Terminal':
                 return <TerminalIcon />
             case 'My projects':
-                return <FolderIcon />
+                return <FolderIcon height="60"/>
             case 'CV.pdf':
                 return <FileIcon />
         }
@@ -29,7 +30,13 @@ const ProgramButton: React.FC<ProgramButtonProps> = ({text, index}) => {
 
     return (
         <button 
-            className={style.button_container} 
+            className={`
+                ${style.btn_custom} 
+                ${style.btn_container} 
+                ${layoutStyle.flex_col}
+                ${layoutStyle.items_center}
+                ${colorStyles.text_white}
+            `} 
             onClick={() => {
                 setModalShowFn(true);
                 setModalTypeFn(index);
@@ -37,7 +44,7 @@ const ProgramButton: React.FC<ProgramButtonProps> = ({text, index}) => {
             key={index}
         >
             {getIconComponent()}
-            <p className={`${colorStyles.text_white} ${commonStyles.text_16}`}>{text}</p>
+            <p className={`${commonStyles.text_16}`}>{text}</p>
         </button>
     )
 }

@@ -38,7 +38,6 @@ const GithubOverviewCard: FC = () => {
         }
     }
     useEffect(() => {
-        console.log(githubStatistic);
         if (githubStatistic.status === 'idle') {
             fetchStatistics();
         } 
@@ -47,15 +46,15 @@ const GithubOverviewCard: FC = () => {
     return (
         <div className={`
                 ${commonStyles.rounded_10} 
-                ${paddingStyles.p_x_16} 
+                ${paddingStyles.px_16} 
                 ${paddingStyles.pr_32} 
                 ${paddingStyles.pl_16} 
-                ${colorStyles.text_white}
                 ${colorStyles.bg_black_transparent}
                 ${marginStyles.my_auto}
                 ${marginStyles.mx_0}
                 ${style.card_container} 
                 ${layoutStyles.flex_col}
+                ${colorStyles.text_white}
             `}
         >
             <h3 className={`${marginStyles.m_0} ${marginStyles.mb_8}`}>GitHub Statistics</h3>

@@ -12,9 +12,9 @@ const SymbolView: FC = () => {
 
     const getClassesForSymbolContainer = () => {
         if (fullSizeModal) {
-            return `${style.symbol_container} ${marginStyles.my_auto} ${paddingStyles.px_35} ${layoutStyles.justify_center} ${style.symbol_container_full}`
+            return `${style.symbol_container} ${marginStyles.my_auto} ${paddingStyles.px_35} ${layoutStyles.justify_center} ${style.large_grid}`
         } else {
-            return `${style.symbol_container} ${marginStyles.my_auto} ${paddingStyles.px_35} ${layoutStyles.justify_center} ${style.symbol_container_small}`
+            return `${style.symbol_container} ${marginStyles.my_auto} ${paddingStyles.px_35} ${layoutStyles.justify_center} ${style.small_grid}`
         }
     }
     
@@ -29,13 +29,8 @@ const SymbolView: FC = () => {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <FolderIcon height="55"/>
-                        <p className={`
-                            ${colorStyles.text_white} 
-                            ${layoutStyles.text_center} 
-                            ${marginStyles.mt_10}`
-                        }
-                        >{repository.name}</p>
+                        <FolderIcon height="60"/>
+                        <p className={layoutStyles.text_center} style={{marginTop: '10px'}}>{repository.name}</p>
                     </a>
                 ))
             }

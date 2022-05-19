@@ -1,13 +1,13 @@
-import React, { FC, useContext, useEffect, useState } from "react";
+import React, { FC, useContext, useEffect } from "react";
 import { PortfolioContext } from "../../features/AppContext";
 import SymbolView from "./SymbolView";
-import { RepositoriesResponseType, RepositoryType } from "../../typings/commonTypes";
+import { RepositoriesResponseType } from "../../typings/commonTypes";
 import style from "./Finder.module.css";
+import colorStyle from "../../styles/colors.module.css";
 import GalleryView from "./GalleryView";
 import { client } from "../../services/apolloConfig";
 import { FETCH_REPOS } from "../../services/dataQueries";
 import { ApolloQueryResult } from "@apollo/client";
-import { MyRepositories } from "../../typings/contextType";
 
 const FinderContent: FC = () => {
     const { searchValue, viewType, myRepositories, setMyRepositoriesFn, setFilterRepositoriesFn} = useContext(PortfolioContext);
@@ -43,7 +43,7 @@ const FinderContent: FC = () => {
     }, [searchValue, viewType, myRepositories]);
     
     return (
-        <div className={`${style.gallery_container}`}>
+        <div className={`${style.gallery_container} ${colorStyle.text_white}`}>
             {
                 viewType === "galleryView"
                 ? <GalleryView />

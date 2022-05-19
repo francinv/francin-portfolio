@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import { todayDateString } from "../../util/dateUtil";
-import paddingStyles from '../../styles/padding.module.css';
 import colorStyles from '../../styles/colors.module.css';
 import layoutStyles from '../../styles/layout.module.css';
 import marginStyles from '../../styles/margin.module.css';
@@ -14,12 +13,11 @@ const HeaderComponent: React.FC = () => {
         <header 
             className=
                 {`
-                    ${paddingStyles.px_7} 
-                    ${paddingStyles.py_9} 
                     ${colorStyles.bg_black_transparent} 
                     ${layoutStyles.flex_row}
+                    ${colorStyles.text_white}
                 `}
-            style={{width: '100%'}}
+            style={{width: '100%', padding: '7px 9px 7px 9px'}}
         >
             <Image
                 src="/apple_logo.svg"
@@ -31,8 +29,7 @@ const HeaderComponent: React.FC = () => {
             className=
                 {`
                     ${layoutStyles.flex_row} 
-                    ${layoutStyles.items_center} 
-                    ${colorStyles.text_white} 
+                    ${layoutStyles.items_center}
                     ${marginStyles.ml_auto}
                 `}
             >

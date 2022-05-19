@@ -14,7 +14,12 @@ const ToolbarButton: FC<ToolbarButtonProps> = ({ handleClick, Icon, iconVisible}
     return (
         <button 
             onClick={handleClick} 
-            className={`${style.btn_toolbar} ${layoutStyles.flex_row} ${layoutStyles.align_all} ${marginStyles.my_5}`}
+            className={`
+                ${style.btn_toolbar} 
+                ${layoutStyles.flex_row} 
+                ${layoutStyles.align_all} 
+                ${style.btn_custom}
+            `}
         >
             <Icon iconVisible={iconVisible} />
         </button>

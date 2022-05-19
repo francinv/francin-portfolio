@@ -4,6 +4,7 @@ import layoutStyles from "../../styles/layout.module.css";
 import paddingStyles from "../../styles/padding.module.css";
 import colorStyles from "../../styles/colors.module.css";
 import marginStyles from "../../styles/margin.module.css";
+import buttonStyle from "../Button/Button.module.css";
 import ToolbarButtonSection from "../common/Toolbar/ToolbarButtonSection";
 import DownloadIcon from "../Icons/DownloadIcon";
 
@@ -15,13 +16,14 @@ const CVToolbar: FC = () => {
                 ${style.toolbar_container}
                 ${layoutStyles.flex_row} 
                 ${layoutStyles.items_center}
-                ${paddingStyles.p_y_8}
+                ${paddingStyles.py_8}
+                ${colorStyles.text_white}
             `}
         >
             <ToolbarButtonSection />
-            <h4 className={`${colorStyles.text_white} ${marginStyles.ml_30}`}>CV.pdf</h4>
+            <h4 className={`${marginStyles.ml_30}`}>CV.pdf</h4>
             <a 
-                className={`${style.btn_toolbar} ${marginStyles.ml_auto} ${marginStyles.mr_12}`} 
+                className={`${buttonStyle.btn_custom} ${marginStyles.ml_auto} ${marginStyles.mr_12}`} 
                 href={cvLink} 
                 target="_blank" 
                 rel="noreferrer"

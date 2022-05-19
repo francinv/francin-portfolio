@@ -15,8 +15,9 @@ a {
   box-sizing: border-box;
 }
 
-.text_white {
-  color: white;
+ul {
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
 input[type=text] {

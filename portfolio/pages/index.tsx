@@ -18,6 +18,7 @@ const Home: NextPage = () => {
     setTimeout(() => {
       setModalShowFn(true);
     }, 500);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
   function getContent() {

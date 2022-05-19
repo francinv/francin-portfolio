@@ -12,7 +12,7 @@ const TerminalToolbar: FC = () => {
                 ${style.toolbar_container} 
                 ${layoutStyles.flex_row} 
                 ${layoutStyles.items_center}
-                ${paddingStyles.p_y_8}
+                ${paddingStyles.py_8}
             `}
         >
             <ToolbarButtonSection />

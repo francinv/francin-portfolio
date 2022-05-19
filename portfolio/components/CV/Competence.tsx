@@ -13,7 +13,7 @@ const Competence: FC<CompetenceProps> = ({title, value}) => {
     const buildCircles = () => {
         const fullCircles = [];
         for (let i = 0; i < 5; i++) {
-            let className = `${style.circle} ${marginStyles.my_1}`;
+            let className = `${style.circle}`;
             if (i < value) {
                 if (value % 1 === 0.5) {
                     if (i + 0.5 === value) {

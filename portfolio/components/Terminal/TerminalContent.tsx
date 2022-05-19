@@ -20,7 +20,6 @@ const TerminalContent: FC = () => {
             return (
                 <p 
                     className={`
-                        ${colorStyles.text_white} 
                         ${marginStyles.mt_5} 
                         ${commonStyles.text_16} 
                         ${commonStyles.text_monaco}`}>
@@ -49,17 +48,20 @@ const TerminalContent: FC = () => {
     }
 
     return (
-        <div className={`${style.terminal_content_container} ${marginStyles.my_auto} ${marginStyles.mt_12}`}>
+        <div 
+            className={`
+                ${style.terminal_content_container} 
+                ${marginStyles.my_auto} 
+                ${colorStyles.text_white}`}>
             <p 
                 className={`
-                    ${colorStyles.text_white} 
-                    ${marginStyles.mb_5} 
                     ${commonStyles.text_16} 
                     ${commonStyles.text_monaco} 
                     ${fullSizeModal ? "full_screen_animation" : "minor_screen_animation" }
                 `}
                 onAnimationStart={() => setIsVisible(false)}
-                onAnimationEnd={() => setIsVisible(true)}>{command}</p>
+                onAnimationEnd={() => setIsVisible(true)}
+                style={{marginBottom: '5px'}}>{command}</p>
             <About isVisible={isVisible} />
         </div>
     );
