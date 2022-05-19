@@ -1,4 +1,4 @@
-import React, { FC, useContext, useEffect, useState } from "react";
+import React, { FC, useContext } from "react";
 import style from "./Finder.module.css";
 import layoutStyles from "../../styles/layout.module.css";
 import paddingStyles from "../../styles/padding.module.css";
@@ -34,6 +34,7 @@ const FinderToolbar: FC = () => {
                 <FinderButton index="symbolView" />
             </div>
             <form 
+                id="search_form"
                 className={`
                     ${layoutStyles.flex_row} 
                     ${style.form_control} 
@@ -43,7 +44,7 @@ const FinderToolbar: FC = () => {
                 `}
             >
                 <SearchIcon />
-                <input type="text" placeholder={"Search for project or language"} value={searchValue} onChange={handleChange}/>
+                <input id="search_field" type="text" placeholder={"Search for project or language"} value={searchValue} onChange={handleChange} autoFocus/>
             </form>
         </div>
     );

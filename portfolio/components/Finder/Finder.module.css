@@ -77,3 +77,21 @@
 .info_container {
     border-bottom: 1px solid #3A363A;
 }
+
+.form_control input:placeholder-shown[placeholder]
+{
+    margin-right: auto;
+}
+.form_control input:placeholder-shown:focus[placeholder]
+{
+    animation: typewriter 3.5s steps(40, end);
+}
+  
+@keyframes typewriter {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
