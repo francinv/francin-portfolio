@@ -14,6 +14,7 @@ const authLink = setContext((_, {headers}) => {
         headers: {
             ...headers,
             authorization: token ? `bearer ${token}` : "",
+            'Content-Type': 'application/graphql',
         }
     }
 });
