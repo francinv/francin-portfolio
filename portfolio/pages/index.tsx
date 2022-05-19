@@ -15,9 +15,11 @@ const Home: NextPage = () => {
   const { setModalShowFn, modalType } = useContext(PortfolioContext);
 
   useEffect(() => {
+    // Set the modal to be shown when entering the page.
     setTimeout(() => {
       setModalShowFn(true);
     }, 500);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
   function getContent() {

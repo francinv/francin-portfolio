@@ -5,7 +5,6 @@ import paddingStyles from "../../styles/padding.module.css";
 import ToolbarButtonSection from "../common/Toolbar/ToolbarButtonSection";
 import colorStyles from "../../styles/colors.module.css";
 import marginStyles from "../../styles/margin.module.css";
-import commonStyles from "../../styles/common.module.css";
 import FinderButton from "../Button/FinderButton";
 import SearchIcon from "../Icons/SearchIcon";
 import { PortfolioContext } from "../../features/AppContext";
@@ -24,14 +23,15 @@ const FinderToolbar: FC = () => {
                 ${style.toolbar_container} 
                 ${layoutStyles.flex_row} 
                 ${layoutStyles.items_center} 
-                ${paddingStyles.p_y_8}
+                ${paddingStyles.py_8}
+                ${colorStyles.text_white}
             `}
         >
             <ToolbarButtonSection />
-            <h4 className={`${colorStyles.text_white} ${marginStyles.ml_30}`}>My projects</h4>
-            <div className={`${marginStyles.ml_auto} ${marginStyles.mr_60} ${style.view_btn}`}>
-                <FinderButton index="galleryView" />
-                <FinderButton index="symbolView" />
+            <h4 className={`${marginStyles.ml_30}`}>My projects</h4>
+            <div className={`${marginStyles.ml_auto} ${style.hover_container}`} style={{marginRight: '60px'}}>
+                <FinderButton type="galleryView" />
+                <FinderButton type="symbolView" />
             </div>
             <form 
                 id="search_form"
@@ -39,9 +39,8 @@ const FinderToolbar: FC = () => {
                     ${layoutStyles.flex_row} 
                     ${style.form_control} 
                     ${layoutStyles.center_all}
-                    ${commonStyles.rounded_8}
-                    ${paddingStyles.pl_3}
                 `}
+                style={{ borderRadius: '8px', paddingLeft: '3px'}}
             >
                 <SearchIcon />
                 <input id="search_field" type="text" placeholder="Search for project or language" value={searchValue} onChange={handleChange} autoFocus/>

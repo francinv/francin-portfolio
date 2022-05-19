@@ -6,10 +6,6 @@
   opacity: 0.8;
 }
 
-.rounded_8 {
-  border-radius: 8px;
-}
-
 .rounded_10 {
   border-radius: 10px;
 }
@@ -21,9 +17,7 @@
 .text_14 {
   font-size: 14px;
 }
-.text_15 {
-  font-size: 15px;
-}
+
 .text_16 {
   font-size: 16px;
 }
@@ -32,16 +26,8 @@
   font-size: 18px;
 }
 
-.text_22 {
-  font-size: 22px;
-}
-
 .font_medium {
   font-weight: 500;
-}
-
-.font_semibold {
-  font-weight: 600;
 }
 
 .text_monaco {

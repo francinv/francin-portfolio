@@ -4,25 +4,30 @@ import layoutStyles from "../../styles/layout.module.css";
 import paddingStyles from "../../styles/padding.module.css";
 import colorStyles from "../../styles/colors.module.css";
 import marginStyles from "../../styles/margin.module.css";
+import buttonStyle from "../Button/Button.module.css";
 import ToolbarButtonSection from "../common/Toolbar/ToolbarButtonSection";
 import DownloadIcon from "../Icons/DownloadIcon";
 
+/**
+ * Toolbar in the CV Window.
+ * @returns JSX.Element
+ */
 const CVToolbar: FC = () => {
-    const cvLink = "https://drive.google.com/file/d/1CJWntPF5KUn0AXq1DMIvTzNmCOB7A-6n/view?usp=sharing";
     return (
         <div 
             className={`
                 ${style.toolbar_container}
                 ${layoutStyles.flex_row} 
                 ${layoutStyles.items_center}
-                ${paddingStyles.p_y_8}
+                ${paddingStyles.py_8}
+                ${colorStyles.text_white}
             `}
         >
             <ToolbarButtonSection />
-            <h4 className={`${colorStyles.text_white} ${marginStyles.ml_30}`}>CV.pdf</h4>
+            <h4 className={`${marginStyles.ml_30}`}>CV.pdf</h4>
             <a 
-                className={`${style.btn_toolbar} ${marginStyles.ml_auto} ${marginStyles.mr_12}`} 
-                href={cvLink} 
+                className={`${buttonStyle.btn_custom} ${marginStyles.ml_auto} ${marginStyles.mr_12}`} 
+                href={process.env.GOOGLE_DRIVE_URL} 
                 target="_blank" 
                 rel="noreferrer"
             >

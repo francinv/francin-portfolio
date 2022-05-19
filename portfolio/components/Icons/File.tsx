@@ -1,6 +1,6 @@
-import React from "react";
+import React, { FC } from "react";
 
-export const FileIcon = () => {
+export const FileIcon: FC = () => {
     return (
         <svg width="52" height="62" viewBox="0 0 52 62" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g opacity="0.809" filter="url(#filter0_f_165_364)">

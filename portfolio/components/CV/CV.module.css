@@ -7,12 +7,6 @@
     z-index: 1;
 }
 
-.btn_toolbar {
-    border-style: none;
-    background: transparent;
-    cursor: pointer;
-}
-
 .content_container {
     width: 90%;
     background-color: #fff;
@@ -28,7 +22,11 @@
     width: 70%;
 }
 
-.right_inner_container {
+.left_inner {
+    width: 80%;
+}
+
+.right_inner {
     width: 85%;
 }
 
@@ -36,15 +34,11 @@
     width: 170px;
 }
 
-.inner_container {
+.experience_left {
     width: 80%;
 }
 
-.exp_left {
-    width: 80%;
-}
-
-.exp_right {
+.experience_right {
     width: 20%;
     text-align: right;
 }
@@ -53,16 +47,27 @@
     height: 20px;
     width: 20px;
     border-radius: 50%;
+    margin-left: 1px;
+    margin-right: 1px;
 }
 
+/*
+* This class shows a gray circle, this is used for the circles in the experience section.
+*/
 .circle_empty {
     background-color: #A5A5A5;
 }
 
+/*
+* This class shows a half circle, this is used for the circles in the experience section.
+*/
 .circle_half {
     background: linear-gradient(90deg, #000 50%, #A5A5A5 50%);
 }
 
+/*
+* This class shows a full circle, this is used for the circles in the experience section.
+*/
 .circle_filled {
     background-color: #000;
 }

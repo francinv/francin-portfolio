@@ -10,10 +10,16 @@
     transition: transform 0.3s ease-in-out;
 }
 
+/*
+* On hovering the element will be moved to the right.
+*/
 .hover_translateX:hover {
     transform: translateX(10px);
 }
 
+/*
+* On hovering the element will be scaled up.
+*/
 .hover_translateX:hover .hover_scale {
     transform: scale(1.5);
 }
@@ -21,6 +27,7 @@
 .outer_lang_container {
     width: 100%;
     height: 20px;
+    margin-right: 16px;
 }
 
 .inner_lang_container {

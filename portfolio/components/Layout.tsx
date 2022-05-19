@@ -1,8 +1,12 @@
-import React, { Children } from "react";
-import Image from "next/image";
+import React, { FC } from "react";
 import styles from '../styles/Home.module.css';
 
-const Layout: React.FC = ({children}) => {
+/**
+ * Wrapper component for the Home page.
+ * @param children of the component.
+ * @returns JSX.Element
+ */
+const Layout: FC = ({children}) => {
 
     return(
         <div className={styles.container}>

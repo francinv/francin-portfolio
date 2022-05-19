@@ -1,43 +1,32 @@
-.button_container {
+.btn_container {
     margin: 0 1rem;
     padding: 0.2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: none;
-	border: none;
-    cursor: pointer;
-    font-family: inherit;
 }
 
 .btn_toolbar {
     border-radius: 50%;
     height: 15px;
     width: 15px;
-    cursor: pointer;
-    padding: 0;
-    border-style: none;
-    border-color: transparent;
-    background-color: transparent;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
-.btn_finder {
-    cursor: pointer;
-    border-style: none;
-    border-color: transparent;
-    background-color: transparent;
-    padding: 0;
-}
-
+/*
+Specific styles for selected buttons.
+*/
 .btn_selected {
     border-radius: 8px;
-    background-color: rgba(87, 88, 84, 0.5);
+    background-color: rgba(87, 88, 84, 0.5) !important;
 }
 
-.btn_remove_style {
+/*
+Removes html styling of button.
+*/
+.btn_custom {
     cursor: pointer;
     border-style: none;
     border-color: transparent;
     background-color: transparent;
     padding: 0;
+    font-family: inherit;
 }

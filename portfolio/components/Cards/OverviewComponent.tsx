@@ -10,6 +10,11 @@ interface OverviewComponentProps {
     Icon: FC;
 }
 
+/**
+ * OverviewComponent is a component that shows every statistics. 
+ * @param title is the title of the element. value is the value of the statistic and Icon is the icon that matches the title.
+ * @returns JSX.Element
+ */
 const OverviewComponent: FC<OverviewComponentProps> = ({ title, value, Icon }) => {
     return (
         <div className={`${layoutStyles.flex_row} ${layoutStyles.items_center} ${style.hover_translateX}`}>

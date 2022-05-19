@@ -1,6 +1,7 @@
+import React, { FC } from 'react';
 import style from './Icon.module.css';
 
-export const LinkedInIcon = () => {
+export const LinkedInIcon: FC = () => {
     return (
         <svg width="55" height="56" viewBox="0 0 55 56" fill="none" xmlns="http://www.w3.org/2000/svg" className={style.hover_fill}>
             <rect className={style.hover_element} y="0.153839" width="55" height="55" rx="27.5" fill="#2878B7"/>

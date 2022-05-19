@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import ProgramButton from "../Button/ProgramButton";
 import GithubOverviewCard from "../Cards/GithubOverviewCard";
 import LanguageCard from "../Cards/LanguageCard";
@@ -6,7 +6,7 @@ import layoutStyles from '../../styles/layout.module.css';
 import marginStyles from '../../styles/margin.module.css';
 
 
-const SectionMain: React.FC = () => {
+const SectionMain: FC = () => {
     return (
         <section 
             className=
@@ -25,8 +25,8 @@ const SectionMain: React.FC = () => {
             >
                 <GithubOverviewCard />
                 <>
-                    <ProgramButton text='My projects' index="Projects"/>
-                    <ProgramButton text='CV.pdf' index="CV"/>
+                    <ProgramButton text='My projects' type="Projects" />
+                    <ProgramButton text='CV.pdf' type="CV" />
                 </>
                 <LanguageCard />
             </div>
