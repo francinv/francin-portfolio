@@ -1,5 +1,4 @@
 import React, { FC, useContext } from "react";
-import { RepositoryType } from "../../typings/commonTypes";
 import layoutStyles from "../../styles/layout.module.css";
 import style from "./Finder.module.css";
 import colorStyles from "../../styles/colors.module.css";
@@ -9,10 +8,18 @@ import { FolderIcon } from "../Icons/Folder";
 import { PortfolioContext } from "../../features/AppContext";
 
 const SymbolView: FC = () => {
-    const { filteredRepositories } = useContext(PortfolioContext);
+    const { filteredRepositories, fullSizeModal } = useContext(PortfolioContext);
+
+    const getClassesForSymbolContainer = () => {
+        if (fullSizeModal) {
+            return `${style.symbol_container} ${marginStyles.my_auto} ${paddingStyles.px_35} ${layoutStyles.justify_center} ${style.symbol_container_full}`
+        } else {
+            return `${style.symbol_container} ${marginStyles.my_auto} ${paddingStyles.px_35} ${layoutStyles.justify_center} ${style.symbol_container_small}`
+        }
+    }
     
     return (
-        <div className={`${style.symbol_container} ${marginStyles.my_auto} ${paddingStyles.px_35} `}>
+        <div className={getClassesForSymbolContainer()}>
             {
                 filteredRepositories.map((repository, index) => (
                     <a 

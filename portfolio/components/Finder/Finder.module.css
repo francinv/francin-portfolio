@@ -30,6 +30,18 @@
     grid-template-columns: repeat(6, 130px);
 }
 
+.symbol_container_small {
+    grid-gap: 20px;
+    grid-template-columns: repeat(6, 130px);
+}
+
+.symbol_container_full {
+    grid-gap: 30px;
+    grid-template-columns: repeat(8, 130px);
+}
+
+
+
 .btn_symbol {
     cursor: pointer;
     border-style: none;
