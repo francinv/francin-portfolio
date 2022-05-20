@@ -2,7 +2,7 @@
 
 ![react-badge]
 ![typescript-badge]
-![redux-badge]
+![next-badge]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
@@ -20,11 +20,11 @@
 <h3 align="center">Francin's portfolio</h3>
 
   <p align="center">
-    This is a hobby project for my own portfolio. Since I am an huge apple fan i thought
+    This is a hobby project for my own portfolio. Since I am an huge Apple fan I thought
     it was a good idea to create a page looking like a mac screen. The different elements
     on the page is meant to look like elements you would find on a mac screen. 
     <br />
-    <a href="https://www.figma.com/proto/QlqAgKyGtFI5JBNlIPcWPH/Francin-Portfolio?page-id=0%3A1&node-id=1%3A2&viewport=241%2C48%2C0.24&scaling=scale-down&starting-point-node-id=1%3A2">View Prototype at Figma</a>
+    <a href="https://francin.vercel.app">View deployed site</a>
     ·
     <a href="https://github.com/francinv/francin-portfolio/issues">Report Bug/Request Feature</a>
   </p>
@@ -51,7 +51,6 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -62,11 +61,13 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://www.figma.com/proto/QlqAgKyGtFI5JBNlIPcWPH/Francin-Portfolio?page-id=0%3A1&node-id=1%3A2&viewport=241%2C48%2C0.24&scaling=scale-down&starting-point-node-id=1%3A2)
+[![Product Name Screen Shot][product-screenshot]](https://francin.vercel.app)
 
-By clicking the image above you can try the prototype out. The prototype is designed in Figma. I always start every project by designing the layout in figma. I have got to experience that this decreases the development time, and the process is more streamlined. 
+By clicking the image above you will be sent to the deployed application. My idea was to create a website that looked like a Mac desktop. This challenge was very fun and I got to test my styling skills. I have created all the components and styling myself, instead of using any third party component libraries.
 
-As mentioned I chose to go for a design looking like a mac screen. I thought this would be a fun challenge! I focused also on implementing all components and styling myself instead of using any third party component libraries. The app is written in TypeScript and will be deployed to Heroku when finished. 
+The application is built with [Next.js](https://nextjs.org) and [TypeScript](https://www.typescriptlang.org) and has been deployed to [Vercel](https://vercel.com). GitHub statistics, my most used languages, my repositories and an image of me are fetched from GitHub using their GraphQL API. This was the first time I used GraphQL and it was exciting to see the advantages of using it.
+
+I have written comment for the code, if it is any questions regarding the code or the project itself please feel free to <a href="#contact">contact me.</a>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -75,16 +76,14 @@ As mentioned I chose to go for a design looking like a mac screen. I thought thi
 ### Built With
 
 * [React.js](https://reactjs.org/)
+* [Next.js](https://nextjs.org/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
-<!-- GETTING STARTED -->
 ## Getting Started
 
-If you want to try the application locally, please follow these steps. I will provide a link to the deployed page when it is ready.
-
+If you want to try the application locally, please follow these steps. 
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
@@ -139,19 +138,17 @@ This view can be opened by clicking the file icon. Here you can see my cv. The C
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Terminal Window
-- [ ] Homescreen with links, icons and stats
-- [ ] Finder window with different layouts
-- [ ] CV window 
+**v.1.0** is now released [https://francin.vercel.app](https://francin.vercel.app).
+
+### v.2.0
+- [ ] Add contact possibility
+- [ ] Web accessibility
+- [ ] Mobile version (the idea is to create a iPhone/iPad looking layout when on smaller screens)
 
 See the [open issues](https://github.com/francinv/francin-portfolio/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
-
-<!-- LICENSE -->
 ## License
 
 Distributed under the Apache 2.0 License. See `LICENSE` for more information.
@@ -187,5 +184,5 @@ Project Link: [https://github.com/francinv/francin-portfolio](https://github.com
 [finder-icon-screenshot]: images/finder_icon.png
 [cv-screenshot]: images/cv.png
 [typescript-badge]:https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white
-[redux-badge]: https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white
 [react-badge]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[next-badge]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
