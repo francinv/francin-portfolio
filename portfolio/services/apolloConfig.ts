@@ -1,8 +1,7 @@
 import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client";
 import { setContext } from '@apollo/client/link/context';
 
-const httpLink = new HttpLink({uri: process.env.GITHUB_API_URL});
-
+const httpLink = new HttpLink({uri: 'https://api.github.com/graphql'});
 /**
  * Apollo client configuration
  * @param {string} token
