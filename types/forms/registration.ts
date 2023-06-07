@@ -1,7 +1,7 @@
 export interface RegistrationForm {
-  from: string
-  to: string
-  subject: string
-  message: string
-  name: string
+  from: string;
+  to: string;
+  subject: string;
+  message: string;
+  name: string;
 }

@@ -1,4 +1,4 @@
-import { IconProps } from "@/types"
+import { IconProps } from '@/types';
 
 const PullRequestIcon = ({ className }: IconProps) => (
   <svg
@@ -16,6 +16,6 @@ const PullRequestIcon = ({ className }: IconProps) => (
       strokeLinejoin="round"
     />
   </svg>
-)
+);
 
-export default PullRequestIcon
+export default PullRequestIcon;

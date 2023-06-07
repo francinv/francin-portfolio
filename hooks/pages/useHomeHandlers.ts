@@ -1,8 +1,8 @@
-"use client"
+'use client';
 
-import { GITHUB, LINKEDIN } from "@/constants"
-import { useState } from "react"
-import { OverlayKey, OverlayState } from "@/types"
+import { GITHUB, LINKEDIN } from '@/constants';
+import { useState } from 'react';
+import { OverlayKey, OverlayState } from '@/types';
 
 const useHomeHandlers = () => {
   const [openOverlays, setOpenOverlay] = useState<OverlayState>({
@@ -10,28 +10,28 @@ const useHomeHandlers = () => {
     cv: false,
     mail: false,
     projects: false,
-  })
+  });
   const handleGoToLinkedIn = () => {
-    window.open(LINKEDIN)
-  }
+    window.open(LINKEDIN);
+  };
 
   const handleGoToGithub = () => {
-    window.open(GITHUB)
-  }
+    window.open(GITHUB);
+  };
 
   const handleOpenOverlay = (key: OverlayKey) => {
     setOpenOverlay({
       ...openOverlays,
       [key]: true,
-    })
-  }
+    });
+  };
 
   const handleCloseOverlay = (key: OverlayKey) => {
     setOpenOverlay({
       ...openOverlays,
       [key]: false,
-    })
-  }
+    });
+  };
 
   return {
     handleGoToLinkedIn,
@@ -42,7 +42,7 @@ const useHomeHandlers = () => {
     isTerminalOpen: openOverlays.terminal,
     handleCloseOverlay,
     handleOpenOverlay,
-  }
-}
+  };
+};
 
-export default useHomeHandlers
+export default useHomeHandlers;

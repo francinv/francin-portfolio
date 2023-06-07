@@ -22,6 +22,6 @@ const LocationIcon = () => (
       strokeLinejoin="round"
     />
   </svg>
-)
+);
 
-export default LocationIcon
+export default LocationIcon;

@@ -1,8 +1,8 @@
-import { FlexContainer, P } from "@/components"
+import { FlexContainer, P } from '@/components';
 
 interface ProgressBarProps {
-  progress: number
-  color: string
+  progress: number;
+  color: string;
 }
 
 const ProgressBar = ({ progress, color }: ProgressBarProps) => {
@@ -14,14 +14,14 @@ const ProgressBar = ({ progress, color }: ProgressBarProps) => {
           className="h-full rounded-l-xl absolute top-0 left-0"
           style={{
             width: `${progress}%`,
-            minWidth: "1rem", // To prevent the bar from disappearing
+            minWidth: '1rem', // To prevent the bar from disappearing
             backgroundColor: color,
           }}
         />
       </div>
       <P className="text-gray-400 text-sm ml-1.5 md:text-lg md:ml-0">{progress}%</P>
     </FlexContainer.Row>
-  )
-}
+  );
+};
 
-export default ProgressBar
+export default ProgressBar;

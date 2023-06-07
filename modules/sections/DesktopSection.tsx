@@ -8,10 +8,10 @@ import {
   LinkedInIcon,
   MailIcon,
   TerminalIcon,
-} from "@/components"
-import { Language, Statistics } from "@/modules"
-import React from "react"
-import { SectionProps } from "./types"
+} from '@/components';
+import { Language, Statistics } from '@/modules';
+import React from 'react';
+import { SectionProps } from './types';
 
 const DesktopSection = ({
   handleGoToLinkedIn,
@@ -21,15 +21,11 @@ const DesktopSection = ({
   return (
     <section className="h-full grid-rows-2">
       <FlexContainer.Row justify="end">
-        <IconButton
-          icon={<GithubIcon.Desktop />}
-          onClick={handleGoToGithub}
-          label={"GitHub"}
-        />
+        <IconButton icon={<GithubIcon.Desktop />} onClick={handleGoToGithub} label={'GitHub'} />
         <IconButton
           icon={<LinkedInIcon.Desktop />}
           onClick={handleGoToLinkedIn}
-          label={"LinkedIn"}
+          label={'LinkedIn'}
           className="ml-8"
         />
       </FlexContainer.Row>
@@ -37,25 +33,25 @@ const DesktopSection = ({
         <div className="flex flex-row justify-center lg:justify-start">
           <IconButton
             icon={<DocumentIcon.Desktop />}
-            onClick={() => handleOpenOverlay("cv")}
-            label={"My CV"}
+            onClick={() => handleOpenOverlay('cv')}
+            label={'My CV'}
           />
           <IconButton
             icon={<FinderIcon.Desktop />}
-            onClick={() => handleOpenOverlay("projects")}
-            label={"My projects"}
+            onClick={() => handleOpenOverlay('projects')}
+            label={'My projects'}
             className="ml-4"
           />
           <IconButton
             icon={<MailIcon.Desktop />}
-            onClick={() => handleOpenOverlay("mail")}
-            label={"Contact me"}
+            onClick={() => handleOpenOverlay('mail')}
+            label={'Contact me'}
             className="ml-4"
           />
           <IconButton
             icon={<TerminalIcon />}
-            onClick={() => handleOpenOverlay("terminal")}
-            label={"Terminal"}
+            onClick={() => handleOpenOverlay('terminal')}
+            label={'Terminal'}
             className="ml-4"
           />
         </div>
@@ -69,7 +65,7 @@ const DesktopSection = ({
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default DesktopSection
+export default DesktopSection;

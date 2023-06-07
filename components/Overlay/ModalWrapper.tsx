@@ -1,15 +1,15 @@
-"use client"
+'use client';
 
-import React, { ReactNode, useState } from "react"
-import Modal from "react-modal"
-import { ModalProps } from "@/types"
-import { useDimensions } from "@/hooks"
+import React, { ReactNode } from 'react';
+import Modal from 'react-modal';
+import { ModalProps } from '@/types';
+import { useDimensions } from '@/hooks';
 
 interface WrapperProps extends ModalProps {
-  children: ReactNode
-  isFullscreen?: boolean
-  title?: string
-  toolbar?: ReactNode
+  children: ReactNode;
+  isFullscreen?: boolean;
+  title?: string;
+  toolbar?: ReactNode;
 }
 
 const ModalWrapper = ({
@@ -19,31 +19,31 @@ const ModalWrapper = ({
   toolbar,
   isFullscreen = false,
 }: WrapperProps) => {
-  const { isSmallScreen } = useDimensions()
+  const { isSmallScreen } = useDimensions();
 
-  if (!isOpen) return null
+  if (!isOpen) return null;
   return (
     <Modal
       isOpen={isOpen}
       onRequestClose={onClose}
       style={{
         overlay: {
-          backgroundColor: "transparent",
+          backgroundColor: 'transparent',
         },
         content: {
-          width: isFullscreen || isSmallScreen ? "100%" : "70%",
-          height: isFullscreen || isSmallScreen ? "100%" : "70%",
-          borderRadius: isFullscreen || isSmallScreen ? 0 : "8px",
-          backgroundColor: "black",
-          border: "none",
+          width: isFullscreen || isSmallScreen ? '100%' : '70%',
+          height: isFullscreen || isSmallScreen ? '100%' : '70%',
+          borderRadius: isFullscreen || isSmallScreen ? 0 : '8px',
+          backgroundColor: 'black',
+          border: 'none',
           padding: 0,
-          top: "50%",
-          left: "50%",
-          right: "auto",
-          bottom: "auto",
-          marginRight: "-50%",
-          transform: "translate(-50%, -50%)",
-          position: "relative",
+          top: '50%',
+          left: '50%',
+          right: 'auto',
+          bottom: 'auto',
+          marginRight: '-50%',
+          transform: 'translate(-50%, -50%)',
+          position: 'relative',
         },
       }}
     >
@@ -57,7 +57,7 @@ const ModalWrapper = ({
         {children}
       </div>
     </Modal>
-  )
-}
+  );
+};
 
-export default ModalWrapper
+export default ModalWrapper;

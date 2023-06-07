@@ -1,7 +1,7 @@
-import { InputProps } from "@/types"
+import { InputProps } from '@/types';
 
 interface TextAreaProps extends InputProps<HTMLTextAreaElement> {
-  rows?: number
+  rows?: number;
 }
 
 const TextArea = ({ value, onChange, name, rows = 5 }: TextAreaProps) => (
@@ -12,6 +12,6 @@ const TextArea = ({ value, onChange, name, rows = 5 }: TextAreaProps) => (
     className="w-full bg-transparent text-white-1000 outline-none resize-none"
     rows={rows}
   />
-)
+);
 
-export default TextArea
+export default TextArea;

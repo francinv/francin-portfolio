@@ -20,6 +20,6 @@ const Desktop = () => (
       strokeLinejoin="round"
     />
   </svg>
-)
+);
 
-export default Desktop
+export default Desktop;

@@ -1,24 +1,22 @@
-import { ProjectsView } from "@/lib"
+import { ProjectsView } from '@/lib';
 import {
   ChevronLeftIcon,
   FlexContainer,
   GalleryIcon,
-  H3,
-  H4,
   IconButton,
   ModalToolbar,
   SearchIcon,
   SymbolIcon,
-} from "@/components"
-import React, { ChangeEvent, useState } from "react"
-import { useDimensions } from "@/hooks"
+} from '@/components';
+import React, { ChangeEvent, useState } from 'react';
+import { useDimensions } from '@/hooks';
 
 interface ProjectsToolbarProps {
-  isGalleryView: boolean
-  setSelectedView: (view: ProjectsView) => void
-  handleSearch: (e: ChangeEvent<HTMLInputElement>) => void
-  searchQuery: string
-  onClose: () => void
+  isGalleryView: boolean;
+  setSelectedView: (view: ProjectsView) => void;
+  handleSearch: (e: ChangeEvent<HTMLInputElement>) => void;
+  searchQuery: string;
+  onClose: () => void;
 }
 
 const ProjectsToolbar = ({
@@ -28,8 +26,8 @@ const ProjectsToolbar = ({
   searchQuery,
   onClose,
 }: ProjectsToolbarProps) => {
-  const [isFullscreen, setIsFullscreen] = useState(false)
-  const { isSmallScreen } = useDimensions()
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const { isSmallScreen } = useDimensions();
 
   const RightContent = (
     <FlexContainer.Row>
@@ -64,8 +62,8 @@ const ProjectsToolbar = ({
         </form>
       </FlexContainer.Row>
     </FlexContainer.Row>
-  )
-  const LeftContent = <IconButton icon={<ChevronLeftIcon />} onClick={onClose} />
+  );
+  const LeftContent = <IconButton icon={<ChevronLeftIcon />} onClick={onClose} />;
 
   return {
     isFullscreen,
@@ -86,7 +84,7 @@ const ProjectsToolbar = ({
         title="My projects"
       />
     ),
-  }
-}
+  };
+};
 
-export default ProjectsToolbar
+export default ProjectsToolbar;

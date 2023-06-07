@@ -1,18 +1,12 @@
-import { FlexContainer, H4 } from "@/components"
-import ToolbarButton from "./Buttons"
-import { ModalToolbarProps } from "./index"
+import { FlexContainer, H4 } from '@/components';
+import ToolbarButton from './Buttons';
+import { ModalToolbarProps } from './index';
 
 interface DesktopProps extends ModalToolbarProps {
-  onFullscreen: () => void
+  onFullscreen: () => void;
 }
 
-const Desktop = ({
-  onClose,
-  height = 54,
-  rightContent,
-  title,
-  onFullscreen,
-}: DesktopProps) => (
+const Desktop = ({ onClose, height = 54, rightContent, title, onFullscreen }: DesktopProps) => (
   <FlexContainer.Row
     justify="between"
     className="px-6 py-2 bg-gray-100 w-full sticky top-0 left-0"
@@ -26,6 +20,6 @@ const Desktop = ({
     </FlexContainer.Row>
     {rightContent}
   </FlexContainer.Row>
-)
+);
 
-export default Desktop
+export default Desktop;

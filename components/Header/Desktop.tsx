@@ -1,11 +1,9 @@
-import { AppleIcon, FlexContainer, P } from "@/components"
-import { NAME } from "@/constants"
-import { HeaderProps } from "."
+import { AppleIcon, FlexContainer, P } from '@/components';
+import { NAME } from '@/constants';
+import { HeaderProps } from '.';
 
 const Desktop = ({ isClient, dateString }: HeaderProps) => (
-  <header
-    className={"bg-black-100 px-2 py-1 flex flex-row items-center justify-between"}
-  >
+  <header className={'bg-black-100 px-2 py-1 flex flex-row items-center justify-between'}>
     <AppleIcon />
     <FlexContainer.Row>
       <P weight="medium">{NAME}</P>
@@ -16,6 +14,6 @@ const Desktop = ({ isClient, dateString }: HeaderProps) => (
       )}
     </FlexContainer.Row>
   </header>
-)
+);
 
-export default Desktop
+export default Desktop;

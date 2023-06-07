@@ -14,6 +14,6 @@ const ImageIcon = () => (
       strokeLinejoin="round"
     />
   </svg>
-)
+);
 
-export default ImageIcon
+export default ImageIcon;

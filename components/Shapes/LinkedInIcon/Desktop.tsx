@@ -19,6 +19,6 @@ const Desktop = () => (
       fill="white"
     />
   </svg>
-)
+);
 
-export default Desktop
+export default Desktop;

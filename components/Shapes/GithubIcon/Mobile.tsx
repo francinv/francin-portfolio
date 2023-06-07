@@ -1,11 +1,5 @@
 const Mobile = () => (
-  <svg
-    width="60"
-    height="60"
-    viewBox="0 0 60 60"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+  <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M60 13C60 5.8203 54.1797 0 47 0H13C5.8203 0 0 5.8203 0 13V47C0 54.1797 5.8203 60 13 60H47C54.1797 60 60 54.1797 60 47V13Z"
       fill="#231E1B"
@@ -17,6 +11,6 @@ const Mobile = () => (
       fill="white"
     />
   </svg>
-)
+);
 
-export default Mobile
+export default Mobile;

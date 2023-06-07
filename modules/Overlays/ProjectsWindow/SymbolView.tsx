@@ -1,12 +1,12 @@
-import { ViewProps } from "./types"
-import { FinderIcon, H6 } from "@/components"
-import Link from "next/link"
+import { ViewProps } from './types';
+import { FinderIcon, H6 } from '@/components';
+import Link from 'next/link';
 
 const SymbolView = ({ projects }: ViewProps) => (
   <div
     className="p-6 grid gap-2"
     style={{
-      gridTemplateColumns: "repeat(auto-fit, minmax(125px, 1fr))",
+      gridTemplateColumns: 'repeat(auto-fit, minmax(125px, 1fr))',
     }}
   >
     {projects.map((project) => (
@@ -24,6 +24,6 @@ const SymbolView = ({ projects }: ViewProps) => (
       </Link>
     ))}
   </div>
-)
+);
 
-export default SymbolView
+export default SymbolView;

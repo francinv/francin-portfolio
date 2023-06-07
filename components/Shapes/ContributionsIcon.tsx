@@ -1,4 +1,4 @@
-import { IconProps } from "@/types"
+import { IconProps } from '@/types';
 
 const ContributionsIcon = ({ className }: IconProps) => (
   <svg
@@ -16,6 +16,6 @@ const ContributionsIcon = ({ className }: IconProps) => (
       strokeLinejoin="round"
     />
   </svg>
-)
+);
 
-export default ContributionsIcon
+export default ContributionsIcon;

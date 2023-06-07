@@ -1,5 +1,5 @@
-import { Project } from "@/types"
+import { Project } from '@/types';
 
 export interface ViewProps {
-  projects: Project[]
+  projects: Project[];
 }

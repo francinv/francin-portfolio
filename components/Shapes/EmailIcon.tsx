@@ -15,6 +15,6 @@ const EmailIcon = () => (
       strokeLinejoin="round"
     />
   </svg>
-)
+);
 
-export default EmailIcon
+export default EmailIcon;

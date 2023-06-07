@@ -9,6 +9,6 @@ const MinusIcon = () => (
   >
     <line x1="2" y1="7.5" x2="13" y2="7.5" stroke="#B06E1D" />
   </svg>
-)
+);
 
-export default MinusIcon
+export default MinusIcon;

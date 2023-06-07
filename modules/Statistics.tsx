@@ -7,18 +7,17 @@ import {
   P,
   PullRequestIcon,
   StarIcon,
-} from "@/components"
-import { stats } from "@/lib"
-import { useDimensions } from "@/hooks"
+} from '@/components';
+import { stats } from '@/lib';
 
 const Statistics = () => {
-  const statistics = stats
+  const statistics = stats;
 
   const Container = ({ children }) => (
     <FlexContainer.Row className="mt-2 hover:translate-x-1 transition-transform">
       {children}
     </FlexContainer.Row>
-  )
+  );
 
   return (
     <>
@@ -44,15 +43,11 @@ const Statistics = () => {
       </Container>
       <Container>
         <ContributionsIcon className="hidden md:block md:mr-2" />
-        <P className="text-gray-200 font-black md:font-normal">
-          Total contributions:
-        </P>
-        <H4 className="ml-auto font-light md:font-black">
-          {statistics.contributions}
-        </H4>
+        <P className="text-gray-200 font-black md:font-normal">Total contributions:</P>
+        <H4 className="ml-auto font-light md:font-black">{statistics.contributions}</H4>
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default Statistics
+export default Statistics;

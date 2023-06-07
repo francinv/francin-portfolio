@@ -1,14 +1,14 @@
-import { ViewProps } from "./types"
-import { useState } from "react"
-import Image from "next/image"
-import { FinderIcon, FlexContainer, H5, ImageIcon, P } from "@/components"
-import Link from "next/link"
+import { ViewProps } from './types';
+import { useState } from 'react';
+import Image from 'next/image';
+import { FinderIcon, FlexContainer, H5, ImageIcon, P } from '@/components';
+import Link from 'next/link';
 
 const GalleryView = ({ projects }: ViewProps) => {
-  const [selectedProject, setSelectedProject] = useState(projects[0])
+  const [selectedProject, setSelectedProject] = useState(projects[0]);
 
-  const isSelected = (project) => selectedProject === project
-  const handleProjectClick = (project) => setSelectedProject(project)
+  const isSelected = (project) => selectedProject === project;
+  const handleProjectClick = (project) => setSelectedProject(project);
 
   const InformationGroup = ({ title, content }) => (
     <FlexContainer.Row
@@ -18,7 +18,7 @@ const GalleryView = ({ projects }: ViewProps) => {
       <P color="text-gray-400">{title}</P>
       <P className="ml-4 sm:ml-0">{content}</P>
     </FlexContainer.Row>
-  )
+  );
 
   return (
     <FlexContainer.Row className="h-full">
@@ -63,30 +63,15 @@ const GalleryView = ({ projects }: ViewProps) => {
         </FlexContainer.Row>
         <H5 className="mt-11 mb-4 mr-auto">Information</H5>
 
-        <InformationGroup
-          title="Issues:"
-          content={selectedProject.issuesTotalCount}
-        />
+        <InformationGroup title="Issues:" content={selectedProject.issuesTotalCount} />
 
-        <InformationGroup
-          title="Pull requests:"
-          content={selectedProject.pullRequestsTotalCount}
-        />
-        <InformationGroup
-          title="Deployed status:"
-          content={selectedProject.deploymentState}
-        />
-        <InformationGroup
-          title="Languages:"
-          content={selectedProject.languages.join(", ")}
-        />
-        <InformationGroup
-          title="Description:"
-          content={selectedProject.description}
-        />
+        <InformationGroup title="Pull requests:" content={selectedProject.pullRequestsTotalCount} />
+        <InformationGroup title="Deployed status:" content={selectedProject.deploymentState} />
+        <InformationGroup title="Languages:" content={selectedProject.languages.join(', ')} />
+        <InformationGroup title="Description:" content={selectedProject.description} />
       </FlexContainer.Column>
     </FlexContainer.Row>
-  )
-}
+  );
+};
 
-export default GalleryView
+export default GalleryView;

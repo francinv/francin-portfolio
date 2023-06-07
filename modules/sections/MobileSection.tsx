@@ -9,11 +9,11 @@ import {
   LinkedInIcon,
   MailIcon,
   P,
-} from "@/components"
-import { Language, Statistics } from "@/modules"
-import React from "react"
-import { SectionProps } from "./types"
-import { AboutMe } from "@/constants"
+} from '@/components';
+import { Language, Statistics } from '@/modules';
+import React from 'react';
+import { SectionProps } from './types';
+import { AboutMe } from '@/constants';
 
 const MobileSection = ({
   handleGoToLinkedIn,
@@ -26,13 +26,13 @@ const MobileSection = ({
         <IconButton
           icon={<GithubIcon.Mobile />}
           onClick={handleGoToGithub}
-          label={"GitHub"}
+          label={'GitHub'}
           labelSize="md"
         />
         <IconButton
           icon={<LinkedInIcon.Mobile />}
           onClick={handleGoToLinkedIn}
-          label={"LinkedIn"}
+          label={'LinkedIn'}
           className="ml-6"
           labelSize="md"
         />
@@ -82,23 +82,20 @@ const MobileSection = ({
       </div>
 
       <FlexContainer.Row className="py-4 rounded-xl bg-white-100">
-        <IconButton
-          icon={<DocumentIcon.Mobile />}
-          onClick={() => handleOpenOverlay("cv")}
-        />
+        <IconButton icon={<DocumentIcon.Mobile />} onClick={() => handleOpenOverlay('cv')} />
         <IconButton
           icon={<FinderIcon.Mobile />}
-          onClick={() => handleOpenOverlay("projects")}
+          onClick={() => handleOpenOverlay('projects')}
           className="ml-8"
         />
         <IconButton
           icon={<MailIcon.Mobile />}
-          onClick={() => handleOpenOverlay("mail")}
+          onClick={() => handleOpenOverlay('mail')}
           className="ml-8"
         />
       </FlexContainer.Row>
     </section>
-  )
-}
+  );
+};
 
-export default MobileSection
+export default MobileSection;

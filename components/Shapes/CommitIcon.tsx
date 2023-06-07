@@ -1,4 +1,4 @@
-import { IconProps } from "@/types"
+import { IconProps } from '@/types';
 
 const CommitIcon = ({ className }: IconProps) => (
   <svg
@@ -16,6 +16,6 @@ const CommitIcon = ({ className }: IconProps) => (
       strokeLinejoin="round"
     />
   </svg>
-)
+);
 
-export default CommitIcon
+export default CommitIcon;

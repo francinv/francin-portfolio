@@ -1,7 +1,7 @@
-import { OverlayKey } from "@/types"
+import { OverlayKey } from '@/types';
 
 export interface SectionProps {
-  handleGoToGithub: () => void
-  handleGoToLinkedIn: () => void
-  handleOpenOverlay: (key: OverlayKey) => void
+  handleGoToGithub: () => void;
+  handleGoToLinkedIn: () => void;
+  handleOpenOverlay: (key: OverlayKey) => void;
 }

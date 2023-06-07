@@ -1,16 +1,16 @@
-import { languages } from "@/lib"
-import ProgressBar from "./ProgressBar"
-import { P } from "@/components"
-import React from "react"
+import { languages } from '@/lib';
+import ProgressBar from './ProgressBar';
+import { P } from '@/components';
+import React from 'react';
 
 const Language = () => {
-  const mockLanguages = languages.slice(0, 4)
+  const mockLanguages = languages.slice(0, 4);
 
   const Container = ({ children }) => (
     <div className="flex flex-col items-start justify-center mt-2 hover:translate-x-1 transition-transform">
       {children}
     </div>
-  )
+  );
 
   return (
     <div>
@@ -21,7 +21,7 @@ const Language = () => {
         </Container>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default Language
+export default Language;

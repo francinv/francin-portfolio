@@ -1,16 +1,16 @@
-import { H3, ModalToolbar, SendIcon } from "@/components"
-import { useState } from "react"
-import { useDimensions } from "@/hooks"
+import { H3, ModalToolbar, SendIcon } from '@/components';
+import { useState } from 'react';
+import { useDimensions } from '@/hooks';
 
 interface MailToolbarProps {
-  isFormValid: boolean
-  onSubmit: () => void
-  onClose: () => void
+  isFormValid: boolean;
+  onSubmit: () => void;
+  onClose: () => void;
 }
 
 const MailToolbar = ({ isFormValid, onSubmit, onClose }: MailToolbarProps) => {
-  const [isFullscreen, setIsFullscreen] = useState(false)
-  const { isSmallScreen } = useDimensions()
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const { isSmallScreen } = useDimensions();
 
   return {
     isFullscreen,
@@ -42,7 +42,7 @@ const MailToolbar = ({ isFormValid, onSubmit, onClose }: MailToolbarProps) => {
         }
       />
     ),
-  }
-}
+  };
+};
 
-export default MailToolbar
+export default MailToolbar;

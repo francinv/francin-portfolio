@@ -1,4 +1,4 @@
-import { ModalProps } from "@/types"
+import { ModalProps } from '@/types';
 import {
   ChevronRightIcon,
   FinderIcon,
@@ -6,22 +6,20 @@ import {
   ModalWrapper,
   P,
   SearchIcon,
-} from "@/components"
-import React, { useState } from "react"
-import { projects, ProjectsView } from "@/lib"
-import GalleryView from "./GalleryView"
-import SymbolView from "./SymbolView"
-import ProjectsToolbar from "./ProjectsToolbar"
-import { useDimensions } from "@/hooks"
-import Link from "next/link"
+} from '@/components';
+import React, { useState } from 'react';
+import { projects, ProjectsView } from '@/lib';
+import GalleryView from './GalleryView';
+import SymbolView from './SymbolView';
+import ProjectsToolbar from './ProjectsToolbar';
+import { useDimensions } from '@/hooks';
+import Link from 'next/link';
 
 const ProjectsWindow = ({ isOpen, onClose }: ModalProps) => {
-  const [selectedView, setSelectedView] = useState<ProjectsView>(
-    ProjectsView.Gallery
-  )
-  const [searchQuery, setSearchQuery] = useState("")
+  const [selectedView, setSelectedView] = useState<ProjectsView>(ProjectsView.Gallery);
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const isGalleryView = selectedView === ProjectsView.Gallery
+  const isGalleryView = selectedView === ProjectsView.Gallery;
 
   const { jsx, isFullscreen } = ProjectsToolbar({
     isGalleryView,
@@ -29,8 +27,8 @@ const ProjectsWindow = ({ isOpen, onClose }: ModalProps) => {
     handleSearch: (e) => setSearchQuery(e.target.value),
     searchQuery,
     onClose,
-  })
-  const { isSmallScreen } = useDimensions()
+  });
+  const { isSmallScreen } = useDimensions();
 
   return (
     <ModalWrapper
@@ -41,10 +39,7 @@ const ProjectsWindow = ({ isOpen, onClose }: ModalProps) => {
       isFullscreen={isFullscreen}
     >
       {isSmallScreen ? (
-        <FlexContainer.Column
-          className="bg-black-1000 px-4 overflow-y-scroll"
-          items="center"
-        >
+        <FlexContainer.Column className="bg-black-1000 px-4 overflow-y-scroll" items="center">
           <FlexContainer.Row className="h-9 rounded-lg bg-gray-600 pl-2 mt-4 w-full">
             <SearchIcon />
             <form className="w-full h-full">
@@ -67,14 +62,11 @@ const ProjectsWindow = ({ isOpen, onClose }: ModalProps) => {
                 rel="noreferrer"
               >
                 <FinderIcon.Desktop height={50} width={50} className="mx-0" />
-                <FlexContainer.Row
-                  className="ml-4 border-b w-full h-full"
-                  justify="between"
-                >
+                <FlexContainer.Row className="ml-4 border-b w-full h-full" justify="between">
                   <FlexContainer.Column justify="center" items="start">
                     <P>{project.name}</P>
                     <p className="text-xs text-gray-400 font-primary">
-                      {project.languages.join(", ")}
+                      {project.languages.join(', ')}
                     </p>
                   </FlexContainer.Column>
                   <ChevronRightIcon />
@@ -85,15 +77,11 @@ const ProjectsWindow = ({ isOpen, onClose }: ModalProps) => {
         </FlexContainer.Column>
       ) : (
         <div className="bg-black-300 w-full h-full">
-          {isGalleryView ? (
-            <GalleryView projects={projects} />
-          ) : (
-            <SymbolView projects={projects} />
-          )}
+          {isGalleryView ? <GalleryView projects={projects} /> : <SymbolView projects={projects} />}
         </div>
       )}
     </ModalWrapper>
-  )
-}
+  );
+};
 
-export default ProjectsWindow
+export default ProjectsWindow;

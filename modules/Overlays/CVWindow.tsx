@@ -1,4 +1,4 @@
-import { ModalProps } from "@/types"
+import { ModalProps } from '@/types';
 import {
   DownloadIcon,
   EmailIcon,
@@ -14,24 +14,24 @@ import {
   ModalWrapper,
   PhoneIcon,
   XIcon,
-} from "@/components"
-import { CV } from "@/constants"
-import React, { useState } from "react"
-import { useDimensions } from "@/hooks"
-import Link from "next/link"
+} from '@/components';
+import { CV } from '@/constants';
+import React, { useState } from 'react';
+import { useDimensions } from '@/hooks';
+import Link from 'next/link';
 
 const CVIcons = {
   phone: <PhoneIcon />,
   email: <EmailIcon />,
   url: <LinkIcon />,
   location: <LocationIcon />,
-}
+};
 
 const Toolbar = ({ onClose }: { onClose: () => void }) => {
-  const [isFullscreen, setIsFullscreen] = useState(false)
-  const { isSmallScreen } = useDimensions()
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const { isSmallScreen } = useDimensions();
 
-  const LeftContent = <IconButton icon={<XIcon.Mobile />} onClick={onClose} />
+  const LeftContent = <IconButton icon={<XIcon.Mobile />} onClick={onClose} />;
   const RightContent = (
     <Link
       href="/FrancinAnojVincentCV.pdf"
@@ -40,7 +40,7 @@ const Toolbar = ({ onClose }: { onClose: () => void }) => {
     >
       <DownloadIcon />
     </Link>
-  )
+  );
 
   return {
     isFullscreen,
@@ -59,11 +59,11 @@ const Toolbar = ({ onClose }: { onClose: () => void }) => {
         rightContent={RightContent}
       />
     ),
-  }
-}
+  };
+};
 
 const CVWindow = ({ isOpen, onClose }: ModalProps) => {
-  const { isFullscreen, jsx } = Toolbar({ onClose })
+  const { isFullscreen, jsx } = Toolbar({ onClose });
 
   return (
     <ModalWrapper
@@ -102,12 +102,10 @@ const CVWindow = ({ isOpen, onClose }: ModalProps) => {
                     {exp.title}
                   </H3>
                   <FlexContainer.Row className="flex-wrap" justify="start">
-                    <p className="text-xs font-extralight text-blue-500 min-w-max">
-                      {exp.company}
-                    </p>
-                    <p className="text-xs font-light text-gray-400 ml-2 min-w-max">{`${
-                      exp.from
-                    } ${exp.to ? ` - ${exp.to}` : ""}`}</p>
+                    <p className="text-xs font-extralight text-blue-500 min-w-max">{exp.company}</p>
+                    <p className="text-xs font-light text-gray-400 ml-2 min-w-max">{`${exp.from} ${
+                      exp.to ? ` - ${exp.to}` : ''
+                    }`}</p>
                     <p className="text-xs font-light text-gray-400 ml-2 min-w-max">
                       {exp.location}
                     </p>
@@ -133,34 +131,27 @@ const CVWindow = ({ isOpen, onClose }: ModalProps) => {
                   <H3 font="font-tertiary" className="text-black-1000 font-normal">
                     {edu.title}
                   </H3>
-                  <p className="text-md font-extralight text-blue-500 min-w-max">
-                    {edu.school}
-                  </p>
+                  <p className="text-md font-extralight text-blue-500 min-w-max">{edu.school}</p>
                   <p className="text-xs font-light text-gray-400 min-w-max">
-                    {edu.from + " - " + edu.to}
+                    {edu.from + ' - ' + edu.to}
                   </p>
                 </div>
               ))}
             </div>
             <div>
               <H6 className="text-gray-400">SUMMARY</H6>
-              <p className="text-black-1000 text-md font-tertiary font-normal mt-3">
-                {CV.summary}
-              </p>
+              <p className="text-black-1000 text-md font-tertiary font-normal mt-3">{CV.summary}</p>
               <H6 className="text-gray-400 mt-4">SKILLS</H6>
               {CV.skills.map((group, idx) => (
                 <div
                   key={idx}
                   className="mt-6 grid gap-2"
                   style={{
-                    gridTemplateColumns: "repeat(auto-fit, minmax(125px, 1fr))",
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(125px, 1fr))',
                   }}
                 >
                   {group.map((skill) => (
-                    <div
-                      key={skill}
-                      className="border-b-2 border-gray-200 text-center"
-                    >
+                    <div key={skill} className="border-b-2 border-gray-200 text-center">
                       <p className="text-black-1000 text-md font-tertiary font-bold pb-1">
                         {skill}
                       </p>
@@ -170,17 +161,9 @@ const CVWindow = ({ isOpen, onClose }: ModalProps) => {
               ))}
               <H6 className="text-gray-400 mt-4">LANGUAGES</H6>
               {CV.languages.map((lang) => (
-                <FlexContainer.Row
-                  className="mt-2"
-                  justify="between"
-                  key={lang.language}
-                >
-                  <p className="text-black-1000 text-md font-tertiary">
-                    {lang.language}
-                  </p>
-                  <p className="text-gray-400 text-md font-tertiary">
-                    {lang.proficiency}
-                  </p>
+                <FlexContainer.Row className="mt-2" justify="between" key={lang.language}>
+                  <p className="text-black-1000 text-md font-tertiary">{lang.language}</p>
+                  <p className="text-gray-400 text-md font-tertiary">{lang.proficiency}</p>
                 </FlexContainer.Row>
               ))}
             </div>
@@ -188,7 +171,7 @@ const CVWindow = ({ isOpen, onClose }: ModalProps) => {
         </div>
       </div>
     </ModalWrapper>
-  )
-}
+  );
+};
 
-export default CVWindow
+export default CVWindow;

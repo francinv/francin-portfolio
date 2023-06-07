@@ -1,12 +1,11 @@
-import "./globals.css"
-import React, { ReactNode } from "react"
-import { Header } from "@/components"
-import Modal from "react-modal"
+import './globals.css';
+import React, { ReactNode } from 'react';
+import { Header } from '@/components';
 
 export const metadata = {
-  title: "Francin Vincent",
-  description: "Learn more about Francin!",
-}
+  title: 'Francin Vincent',
+  description: 'Learn more about Francin!',
+};
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -16,5 +15,5 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {children}
       </body>
     </html>
-  )
+  );
 }

@@ -1,11 +1,5 @@
 const Mobile = () => (
-  <svg
-    width="60"
-    height="60"
-    viewBox="0 0 60 60"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+  <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -32,6 +26,6 @@ const Mobile = () => (
       </linearGradient>
     </defs>
   </svg>
-)
+);
 
-export default Mobile
+export default Mobile;

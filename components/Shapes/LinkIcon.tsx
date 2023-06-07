@@ -15,6 +15,6 @@ const LinkIcon = () => (
       strokeLinejoin="round"
     />
   </svg>
-)
+);
 
-export default LinkIcon
+export default LinkIcon;

@@ -1,11 +1,11 @@
-import { ModalToolbar, ModalWrapper, P } from "@/components"
-import { Pace, WindupChildren } from "windups"
-import { useState } from "react"
-import { ModalProps } from "@/types"
-import { AboutMe } from "@/constants"
+import { ModalToolbar, ModalWrapper, P } from '@/components';
+import { Pace, WindupChildren } from 'windups';
+import { useState } from 'react';
+import { ModalProps } from '@/types';
+import { AboutMe } from '@/constants';
 
 const Toolbar = ({ onClose }: { onClose: () => void }) => {
-  const [isFullscreen, setIsFullscreen] = useState(false)
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   return {
     isFullscreen,
@@ -16,34 +16,26 @@ const Toolbar = ({ onClose }: { onClose: () => void }) => {
         height="auto"
       />
     ),
-  }
-}
+  };
+};
 
 const TerminalWindow = ({ isOpen, onClose }: ModalProps) => {
-  const [startInformation, setStartInformation] = useState(false)
-  const { isFullscreen, jsx } = Toolbar({ onClose })
+  const [startInformation, setStartInformation] = useState(false);
+  const { isFullscreen, jsx } = Toolbar({ onClose });
 
   return (
-    <ModalWrapper
-      isOpen={isOpen}
-      onClose={onClose}
-      toolbar={jsx}
-      isFullscreen={isFullscreen}
-    >
+    <ModalWrapper isOpen={isOpen} onClose={onClose} toolbar={jsx} isFullscreen={isFullscreen}>
       <div className="p-5">
         <P font="font-secondary">
-          francinvincent@Francins-MBP ~ %{" "}
+          francinvincent@Francins-MBP ~ %{' '}
           <WindupChildren onFinished={() => setStartInformation(true)}>
             cat francin.json
           </WindupChildren>
         </P>
-        <WindupChildren
-          isPaused={!startInformation}
-          onFinished={() => setStartInformation(false)}
-        >
-          <Pace getPace={(char) => (char === " " ? 10 : 5)}>
+        <WindupChildren isPaused={!startInformation} onFinished={() => setStartInformation(false)}>
+          <Pace getPace={(char) => (char === ' ' ? 10 : 5)}>
             <P className="ml-0.5" font="font-secondary">
-              {"{"}
+              {'{'}
             </P>
             <div className="ml-3">
               <P font="font-secondary">{`"name": "${AboutMe.name}",`}</P>
@@ -54,13 +46,13 @@ const TerminalWindow = ({ isOpen, onClose }: ModalProps) => {
               <P font="font-secondary">{`"frameworks": "${AboutMe.frameworks}",`}</P>
             </div>
             <P className="ml-0.5" font="font-secondary">
-              {"}"}
+              {'}'}
             </P>
           </Pace>
         </WindupChildren>
       </div>
     </ModalWrapper>
-  )
-}
+  );
+};
 
-export default TerminalWindow
+export default TerminalWindow;

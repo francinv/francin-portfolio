@@ -15,6 +15,6 @@ const PhoneIcon = () => (
       strokeLinejoin="round"
     />
   </svg>
-)
+);
 
-export default PhoneIcon
+export default PhoneIcon;

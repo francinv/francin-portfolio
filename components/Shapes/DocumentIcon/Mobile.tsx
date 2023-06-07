@@ -1,17 +1,12 @@
 const Mobile = () => (
-  <svg
-    width="60"
-    height="60"
-    viewBox="0 0 60 60"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+  <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       fillRule="evenodd"
       clipRule="evenodd"
       d="M45.6379 0.124512C54.2738 0.124512 59.8755 5.72617 59.8755 14.3621V45.638C59.8755 54.2739 54.2738 59.8755 45.6379 59.8755H14.362C5.72611 59.8755 0.124451 54.2739 0.124451 45.638V14.3621C0.124451 5.72617 5.72611 0.124512 14.362 0.124512H45.6379Z"
       fill="white"
     />
+
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -34,7 +29,7 @@ const Mobile = () => (
     </g>
     <mask
       id="mask0_503_547"
-      style={{ maskType: "alpha" }}
+      style={{ maskType: 'alpha' }}
       maskUnits="userSpaceOnUse"
       x="13"
       y="8"
@@ -96,11 +91,7 @@ const Mobile = () => (
           type="matrix"
           values="0 0 0 0 0.223529 0 0 0 0 0.454902 0 0 0 0 0.835294 0 0 0 1 0"
         />
-        <feBlend
-          mode="normal"
-          in2="BackgroundImageFix"
-          result="effect1_dropShadow_503_547"
-        />
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_503_547" />
         <feColorMatrix
           in="SourceAlpha"
           type="matrix"
@@ -118,12 +109,7 @@ const Mobile = () => (
           in2="effect1_dropShadow_503_547"
           result="effect2_dropShadow_503_547"
         />
-        <feBlend
-          mode="normal"
-          in="SourceGraphic"
-          in2="effect2_dropShadow_503_547"
-          result="shape"
-        />
+        <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_503_547" result="shape" />
       </filter>
       <linearGradient
         id="paint0_linear_503_547"
@@ -160,6 +146,6 @@ const Mobile = () => (
       </linearGradient>
     </defs>
   </svg>
-)
+);
 
-export default Mobile
+export default Mobile;

@@ -1,8 +1,8 @@
-import { FlexContainer } from "@/components"
-import { InputProps } from "@/types"
+import { FlexContainer } from '@/components';
+import { InputProps } from '@/types';
 
 interface TextInputProps extends InputProps<HTMLInputElement> {
-  readOnly?: boolean
+  readOnly?: boolean;
 }
 
 const TextInput = ({
@@ -11,7 +11,7 @@ const TextInput = ({
   onChange,
   name,
   readOnly = false,
-  type = "text",
+  type = 'text',
 }: TextInputProps) => (
   <FlexContainer.Row className="py-2 border-b border-gray-500" justify="start">
     <label htmlFor={name} className="text-gray-400 text-md font-primary">
@@ -26,6 +26,6 @@ const TextInput = ({
       readOnly={readOnly}
     />
   </FlexContainer.Row>
-)
+);
 
-export default TextInput
+export default TextInput;

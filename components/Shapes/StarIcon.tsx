@@ -1,6 +1,6 @@
-import { IconProps } from "@/types"
+import { IconProps } from '@/types';
 
-const StarIcon = ({ className = "" }: IconProps) => (
+const StarIcon = ({ className = '' }: IconProps) => (
   <svg
     width="30"
     height="30"
@@ -16,6 +16,6 @@ const StarIcon = ({ className = "" }: IconProps) => (
       strokeLinejoin="round"
     />
   </svg>
-)
+);
 
-export default StarIcon
+export default StarIcon;
