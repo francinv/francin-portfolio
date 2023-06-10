@@ -14,5 +14,5 @@ export interface TypographyProps {
     | 'bold'
     | 'extrabold'
     | 'black';
-  color?: 'text-black-1000' | 'text-white-1000';
+  color?: 'text-black-1000' | 'text-white-1000' | 'text-gray-400';
 }

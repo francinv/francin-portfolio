@@ -8,7 +8,7 @@ interface CardProps {
 }
 
 const Card = ({ children, title, className = '' }: CardProps) => (
-  <div className={`rounded-xl bg-black-100 p-4 pr-7 ${className}`}>
+  <div className={`rounded-xl bg-black-100 p-4 pr-7 ${className}`} style={{ minHeight: 150 }}>
     {title && <H3>{title}</H3>}
     {children}
   </div>

@@ -1,24 +1,27 @@
-const CV = {
+import { CV } from '@/types';
+import { CVIcon } from '@/lib';
+
+const MyCv: CV = {
   name: 'FRANCIN ANOJ VINCENT',
   title: 'Full Stack Developer',
   contact_info: [
     {
-      icon: 'phone',
+      icon: CVIcon.Phone,
       text: '46629490',
       link: 'tel:46629490',
     },
     {
-      icon: 'email',
-      text: 'francin.vinc@gmail.com',
-      link: 'mailto:francin.vinc@gmail.com',
+      icon: CVIcon.Email,
+      text: 'post@francinvincent.no',
+      link: 'mailto:post@francinvincent.no',
     },
     {
-      icon: 'url',
+      icon: CVIcon.Url,
       text: 'francinvincent.no',
       link: 'https://francinvincent.no',
     },
     {
-      icon: 'location',
+      icon: CVIcon.Location,
       text: 'Trondheim, Norway',
       link: 'https://goo.gl/maps/3WUQi1ZZkboPZxkh8',
     },
@@ -123,4 +126,4 @@ const CV = {
   ],
 };
 
-export default CV;
+export default MyCv;

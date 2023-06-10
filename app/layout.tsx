@@ -1,6 +1,6 @@
 import './globals.css';
 import React, { ReactNode } from 'react';
-import { Header } from '@/components';
+import { AppProvider } from '@/providers';
 
 export const metadata = {
   title: 'Francin Vincent',
@@ -11,8 +11,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <Header />
-        {children}
+        <AppProvider>{children}</AppProvider>
       </body>
     </html>
   );

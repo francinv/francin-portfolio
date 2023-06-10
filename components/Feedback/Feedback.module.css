@@ -1,0 +1,69 @@
+.skeleton {
+    background: rgba(87, 88, 84, 0.5);
+    overflow: hidden;
+    position: relative;
+    border-radius: 22px;
+}
+
+.skeleton::after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, rgba(165, 165, 165, 0.2), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    to {
+        transform: translateX(100%);
+    }
+}
+
+.spinner {
+    position: relative;
+    display: inline-block;
+}
+
+.blade {
+    position: absolute;
+    left: 0.4629em;
+    bottom: 0;
+    width: 0.074em;
+    height: 0.2777em;
+    border-radius: 0.0555em;
+    background-color: transparent;
+    transform-origin: center -0.2222em;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    0% {
+        background-color: #69717d;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+.progress_loader {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    animation: progress 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    background-color: white;
+    height: 100%;
+    border-radius: 0.75rem;
+}
+
+@keyframes progress {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+

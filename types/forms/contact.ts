@@ -1,4 +1,4 @@
-export interface RegistrationForm {
+export interface ContactForm {
   from: string;
   to: string;
   subject: string;

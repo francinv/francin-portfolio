@@ -3,7 +3,10 @@ import { NAME } from '@/constants';
 import { HeaderProps } from '.';
 
 const Desktop = ({ isClient, dateString }: HeaderProps) => (
-  <header className={'bg-black-100 px-2 py-1 flex flex-row items-center justify-between'}>
+  <header
+    className={'bg-black-100 px-2 py-1 flex flex-row items-center justify-between'}
+    style={{ height: 40 }}
+  >
     <AppleIcon />
     <FlexContainer.Row>
       <P weight="medium">{NAME}</P>

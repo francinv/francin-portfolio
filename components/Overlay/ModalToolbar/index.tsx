@@ -7,7 +7,7 @@ export interface ModalToolbarProps {
   rightContent?: ReactNode;
   title?: string;
 
-  height?: number;
+  height?: number | string;
 }
 
 const ModalToolbar = {

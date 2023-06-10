@@ -9,10 +9,10 @@ const SymbolView = ({ projects }: ViewProps) => (
       gridTemplateColumns: 'repeat(auto-fit, minmax(125px, 1fr))',
     }}
   >
-    {projects.map((project) => (
+    {projects.map((project, idx) => (
       <Link
         href={project.projectUrl}
-        key={project.name}
+        key={`${idx}+${project.name}`}
         className="flex flex-col items-center"
         target="_blank"
         rel="noreferrer"

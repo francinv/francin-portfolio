@@ -21,7 +21,7 @@ const MobileSection = ({
   handleOpenOverlay,
 }: SectionProps) => {
   return (
-    <section className="flex flex-col h-full">
+    <section className="h-full flex flex-col">
       <FlexContainer.Row justify="start" items="start" className="my-2">
         <IconButton
           icon={<GithubIcon.Mobile />}
@@ -48,10 +48,6 @@ const MobileSection = ({
             <P className="text-sm text-right">{AboutMe.age}</P>
           </FlexContainer.Row>
           <FlexContainer.Row justify="between" items="start">
-            <H6>Location:</H6>
-            <P className="text-sm text-right">{AboutMe.location}</P>
-          </FlexContainer.Row>
-          <FlexContainer.Row justify="between" items="start">
             <H6>Education:</H6>
             <P className="text-sm text-right">{AboutMe.education}</P>
           </FlexContainer.Row>
@@ -64,24 +60,21 @@ const MobileSection = ({
             <P className="text-sm text-right">{AboutMe.frameworks}</P>
           </FlexContainer.Row>
         </Card>
-        <P className="text-md">About me</P>
       </FlexContainer.Column>
       <div className="grid grid-cols-2 gap-2 my-2">
         <FlexContainer.Column>
           <Card className="w-full h-full flex flex-col justify-center">
             <Statistics />
           </Card>
-          <P className="text-md">Statistics</P>
         </FlexContainer.Column>
         <FlexContainer.Column>
           <Card className="w-full h-full flex flex-col justify-center">
             <Language />
           </Card>
-          <P className="text-md">Languages</P>
         </FlexContainer.Column>
       </div>
 
-      <FlexContainer.Row className="py-4 rounded-xl bg-white-100">
+      <FlexContainer.Row className="py-4 rounded-xl bg-white-100 my-auto">
         <IconButton icon={<DocumentIcon.Mobile />} onClick={() => handleOpenOverlay('cv')} />
         <IconButton
           icon={<FinderIcon.Mobile />}

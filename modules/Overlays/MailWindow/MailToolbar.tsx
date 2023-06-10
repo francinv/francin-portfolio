@@ -1,16 +1,17 @@
 import { H3, ModalToolbar, SendIcon } from '@/components';
 import { useState } from 'react';
-import { useDimensions } from '@/hooks';
+import { useAppContext } from '@/hooks';
 
 interface MailToolbarProps {
   isFormValid: boolean;
-  onSubmit: () => void;
+  handleSubmit: () => Promise<void>;
   onClose: () => void;
+  isLoading: boolean;
 }
 
-const MailToolbar = ({ isFormValid, onSubmit, onClose }: MailToolbarProps) => {
+const MailToolbar = ({ isFormValid, handleSubmit, onClose, isLoading }: MailToolbarProps) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const { isSmallScreen } = useDimensions();
+  const { isSmallScreen } = useAppContext();
 
   return {
     isFullscreen,
@@ -24,7 +25,6 @@ const MailToolbar = ({ isFormValid, onSubmit, onClose }: MailToolbarProps) => {
           </button>
         }
         onClose={onClose}
-        appBarColor="bg-black-1000"
         bgColor="bg-gray-600"
       />
     ) : (
@@ -33,9 +33,9 @@ const MailToolbar = ({ isFormValid, onSubmit, onClose }: MailToolbarProps) => {
         onFullscreen={() => setIsFullscreen(!isFullscreen)}
         rightContent={
           <button
-            disabled={!isFormValid}
+            disabled={!isFormValid || isLoading}
             className="rounded-lg hover:bg-gray-200 transition-colors px-2 py-1 disabled:opacity-50 disabled:cursor-not-allowed"
-            onClick={onSubmit}
+            onClick={handleSubmit}
           >
             <SendIcon />
           </button>

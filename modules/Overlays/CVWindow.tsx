@@ -15,21 +15,22 @@ import {
   PhoneIcon,
   XIcon,
 } from '@/components';
-import { CV } from '@/constants';
+import { MyCv } from '@/constants';
 import React, { useState } from 'react';
-import { useDimensions } from '@/hooks';
 import Link from 'next/link';
+import { useAppContext } from '@/hooks';
+import { CVIcon } from '@/lib';
 
 const CVIcons = {
-  phone: <PhoneIcon />,
-  email: <EmailIcon />,
-  url: <LinkIcon />,
-  location: <LocationIcon />,
+  [CVIcon.Phone]: <PhoneIcon />,
+  [CVIcon.Email]: <EmailIcon />,
+  [CVIcon.Url]: <LinkIcon />,
+  [CVIcon.Location]: <LocationIcon />,
 };
 
 const Toolbar = ({ onClose }: { onClose: () => void }) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const { isSmallScreen } = useDimensions();
+  const { isSmallScreen } = useAppContext();
 
   const LeftContent = <IconButton icon={<XIcon.Mobile />} onClick={onClose} />;
   const RightContent = (
@@ -75,12 +76,12 @@ const CVWindow = ({ isOpen, onClose }: ModalProps) => {
     >
       <div className="md:py-5 md:px-20">
         <div className="bg-white-1000 p-11">
-          <H1>{CV.name}</H1>
+          <H1>{MyCv.name}</H1>
           <H4 className="text-blue-500 font-normal" font="font-tertiary">
-            {CV.title}
+            {MyCv.title}
           </H4>
           <FlexContainer.Row justify="start" className="flex-wrap">
-            {CV.contact_info.map((info) => (
+            {MyCv.contact_info.map((info) => (
               <FlexContainer.Row className="mr-2" key={info.text}>
                 {CVIcons[info.icon]}
                 <Link
@@ -96,7 +97,7 @@ const CVWindow = ({ isOpen, onClose }: ModalProps) => {
           <div className="grid gap-4 grid-cols-1 mt-5 md:grid-cols-2">
             <div>
               <H6 className="text-gray-400">EXPERIENCE</H6>
-              {CV.experiences.map((exp) => (
+              {MyCv.experiences.map((exp) => (
                 <div key={exp.company} className="mt-3">
                   <H3 font="font-tertiary" className="text-black-1000 font-normal">
                     {exp.title}
@@ -126,7 +127,7 @@ const CVWindow = ({ isOpen, onClose }: ModalProps) => {
                 </div>
               ))}
               <H6 className="text-gray-400 mt-4">EDUCATION</H6>
-              {CV.education.map((edu) => (
+              {MyCv.education.map((edu) => (
                 <div key={edu.title} className="mt-3">
                   <H3 font="font-tertiary" className="text-black-1000 font-normal">
                     {edu.title}
@@ -140,9 +141,11 @@ const CVWindow = ({ isOpen, onClose }: ModalProps) => {
             </div>
             <div>
               <H6 className="text-gray-400">SUMMARY</H6>
-              <p className="text-black-1000 text-md font-tertiary font-normal mt-3">{CV.summary}</p>
+              <p className="text-black-1000 text-md font-tertiary font-normal mt-3">
+                {MyCv.summary}
+              </p>
               <H6 className="text-gray-400 mt-4">SKILLS</H6>
-              {CV.skills.map((group, idx) => (
+              {MyCv.skills.map((group, idx) => (
                 <div
                   key={idx}
                   className="mt-6 grid gap-2"
@@ -160,7 +163,7 @@ const CVWindow = ({ isOpen, onClose }: ModalProps) => {
                 </div>
               ))}
               <H6 className="text-gray-400 mt-4">LANGUAGES</H6>
-              {CV.languages.map((lang) => (
+              {MyCv.languages.map((lang) => (
                 <FlexContainer.Row className="mt-2" justify="between" key={lang.language}>
                   <p className="text-black-1000 text-md font-tertiary">{lang.language}</p>
                   <p className="text-gray-400 text-md font-tertiary">{lang.proficiency}</p>

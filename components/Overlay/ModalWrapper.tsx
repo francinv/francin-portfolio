@@ -3,7 +3,7 @@
 import React, { ReactNode } from 'react';
 import Modal from 'react-modal';
 import { ModalProps } from '@/types';
-import { useDimensions } from '@/hooks';
+import { useAppContext } from '@/hooks';
 
 interface WrapperProps extends ModalProps {
   children: ReactNode;
@@ -19,7 +19,7 @@ const ModalWrapper = ({
   toolbar,
   isFullscreen = false,
 }: WrapperProps) => {
-  const { isSmallScreen } = useDimensions();
+  const { isSmallScreen } = useAppContext();
 
   if (!isOpen) return null;
   return (
@@ -47,14 +47,16 @@ const ModalWrapper = ({
         },
       }}
     >
-      {toolbar}
-      <div
-        className="overflow-y-auto w-full"
-        style={{
-          height: `calc(100% - ${isSmallScreen ? 92 : 54}px)`,
-        }}
-      >
-        {children}
+      <div className="w-full h-full">
+        {toolbar}
+        <div
+          className="overflow-y-auto w-full"
+          style={{
+            height: `calc(100% - 54px)`,
+          }}
+        >
+          {children}
+        </div>
       </div>
     </Modal>
   );

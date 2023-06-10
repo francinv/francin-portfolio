@@ -5,4 +5,9 @@ export interface OverlayState {
   projects: boolean;
 }
 
+export interface AppState {
+  isSmallScreen: boolean;
+  isAppLoading: boolean;
+}
+
 export type OverlayKey = keyof OverlayState;

@@ -3,14 +3,15 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { FinderIcon, FlexContainer, H5, ImageIcon, P } from '@/components';
 import Link from 'next/link';
+import { Project } from '@/types';
 
 const GalleryView = ({ projects }: ViewProps) => {
   const [selectedProject, setSelectedProject] = useState(projects[0]);
 
-  const isSelected = (project) => selectedProject === project;
-  const handleProjectClick = (project) => setSelectedProject(project);
+  const isSelected = (project: Project) => selectedProject === project;
+  const handleProjectClick = (project: Project) => setSelectedProject(project);
 
-  const InformationGroup = ({ title, content }) => (
+  const InformationGroup = ({ title, content }: { title: string; content: string }) => (
     <FlexContainer.Row
       className="border-b border-gray-500 py-4 font-primary w-full sm:flex-col sm:items-start sm:ml-2"
       justify="between"
@@ -29,8 +30,8 @@ const GalleryView = ({ projects }: ViewProps) => {
               <Image
                 src={selectedProject.imageUrl}
                 alt="Banner image for project"
-                width={650}
-                height={350}
+                width={600}
+                height={400}
               />
             ) : (
               <ImageIcon />
@@ -43,7 +44,7 @@ const GalleryView = ({ projects }: ViewProps) => {
         >
           {projects.map((project, idx) => (
             <button
-              key={idx}
+              key={`${idx}+${project.name}`}
               onClick={() => handleProjectClick(project)}
               className="px-2 py-1 aria-pressed:bg-gray-200 rounded-lg"
               aria-pressed={isSelected(project)}
@@ -54,18 +55,19 @@ const GalleryView = ({ projects }: ViewProps) => {
         </div>
       </FlexContainer.Column>
       <FlexContainer.Column
-        className="w-1/4 border-black border-l px-4 pt-14 h-full"
+        className="w-1/4 border-black border-l px-4 pt-4 h-full overflow-y-scroll"
         justify="start"
       >
-        <FlexContainer.Row>
+        <FlexContainer.Row justify="start" className="w-full">
           <FinderIcon.Desktop className="mr-4" width={70} height={70} />
           <H5>{selectedProject.name}</H5>
         </FlexContainer.Row>
-        <H5 className="mt-11 mb-4 mr-auto">Information</H5>
-
-        <InformationGroup title="Issues:" content={selectedProject.issuesTotalCount} />
-
-        <InformationGroup title="Pull requests:" content={selectedProject.pullRequestsTotalCount} />
+        <H5 className="mt-4 mr-auto">Information</H5>
+        <InformationGroup title="Issues:" content={String(selectedProject.issuesTotalCount)} />
+        <InformationGroup
+          title="Pull requests:"
+          content={String(selectedProject.pullRequestsTotalCount)}
+        />
         <InformationGroup title="Deployed status:" content={selectedProject.deploymentState} />
         <InformationGroup title="Languages:" content={selectedProject.languages.join(', ')} />
         <InformationGroup title="Description:" content={selectedProject.description} />
