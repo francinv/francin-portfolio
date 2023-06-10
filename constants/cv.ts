@@ -1,5 +1,5 @@
 import { CV } from '@/types';
-import { CVIcon } from '@/lib';
+import { CVIcon } from '@/lib/enums/icons';
 
 const MyCv: CV = {
   name: 'FRANCIN ANOJ VINCENT',
